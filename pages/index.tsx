@@ -186,7 +186,6 @@ console.log(sortedCatalogItems[0])
  * @returns 
  */
 function CatalogItemPopup({catalogItem}) {
-  console.log('f', catalogItem)
   return (
             <aside style={{border: "1px dashed pink", borderRadius: 16, margin: 8, width: 'max-content', padding: 8, backgroundColor: 'lightblue'}}>
                 <h3>{catalogItem.name}</h3> 
@@ -266,7 +265,9 @@ const palettesMock = [
   {mainColor: '#00a', isObtained: true, isWishlisted: true},
   {mainColor: '#0a0', isObtained: false, isWishlisted: false},
 ]
-function PaletteButtons({isUnlocked, palettes=palettesMock}) {
+function PaletteButtons() {
+  const isUnlocked = true;
+  const palettes = palettesMock
 
 
   return (
