@@ -120,7 +120,7 @@ console.log(sortedCatalogItems[0])
 <div>
   View mode: 
   {Object.values(ViewMode).map(viewMode => {
-    return <button onClick={()=>setViewMode(viewMode)}>{viewMode}</button>
+    return <button key={viewMode} onClick={()=>setViewMode(viewMode)}>{viewMode}</button>
   })}
 </div>
 
@@ -211,7 +211,7 @@ function CatalogItemPopup({catalogItem}) {
 
                 <h4>Gallery</h4>
                 {catalogItem.gallery.map(image => {
-                  return <Image src={`/images/${image.src}`} height={100} width={200} alt={`Model ${image.model} wearing ${catalogItem.name}, courtesy of ${image.owner}`} />
+                  return <Image key={image.src} src={`/images/${image.src}`} height={100} width={200} alt={`Model ${image.model} wearing ${catalogItem.name}, courtesy of ${image.owner}`} />
                 })}
     </aside>
   )
