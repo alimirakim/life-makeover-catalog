@@ -120,6 +120,7 @@ export enum AccessoryCategory {
 }
 
 export enum MakeupCategory {
+    Collection="Collection",
     Eyebrows="Eyebrows",
     Contacts="Contacts",
     Eyeliner="Eyeliner",
