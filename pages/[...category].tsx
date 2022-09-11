@@ -5,15 +5,25 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 import {
+  AccessoryCategory,
   CatalogueCategory,
   FashionCategory,
   MakeupCategory,
   Style,
   Tag,
-} from "../../types/types";
+} from "../types/types";
 
-const categoryMap = {
-  [CatalogueCategory.Fashion]: Object.values(FashionCategory),
+// /fashion/dress
+// /fashion/accessory/hat
+// /fashion/accessory/earrings
+// /makeup/all
+// /makeup/lipstick
+
+const CATEGORY_TREE = {
+  [CatalogueCategory.Fashion]: [
+    ...Object.values(FashionCategory), 
+    {[FashionCategory.Accessory]: Object.values(AccessoryCategory)},
+  ],
   [CatalogueCategory.Makeup]: Object.values(MakeupCategory),
   [CatalogueCategory.Allies]: ["All", "SSR", "SR", "R"],
   [CatalogueCategory.Photo]: [
@@ -97,17 +107,25 @@ export async function getStaticProps() {
   };
 }
 
+
 export async function getStaticPaths() {
-  const paths = Object.values(CatalogueCategory).flatMap(supercategory => {
-    return Object.values(categoryMap[supercategory]).map(category => {
-      return {
+//   const paths = Object.values(CatalogueCategory).flatMap(supercategory => {
+//     return Object.values(CATEGORY_TREE[supercategory]).map(category => {
+//       return {
+//     params: {
+//         supercategory: supercategory,
+//         category: category
+//       }
+//     }
+//   })
+// })
+  // const paths = getCategoryPaths([], [], CATEGORY_TREE)
+  const paths = [{
     params: {
-      supercategory: supercategory,
-      category: category
-    }
-  }
-  })
-})
+      category: ['Fashion', 'Set']
+    } 
+  }]
+  console.log(paths)
 
   return {
     paths,
@@ -115,10 +133,47 @@ export async function getStaticPaths() {
   }
 }
 
+function getCategoryPaths(paths, currentPath, currentCategory) {
+
+  if (typeof currentCategory === 'string') {
+    return [...paths, {
+      params: {
+        category: [...currentPath, currentCategory],
+      }
+    }]
+  }
+
+  let currentPaths = [...paths]
+  console.log({currentPaths})
+  Object.entries(currentCategory).forEach(([key, value]) => {
+    currentPaths = getCategoryPaths(currentPaths, [...currentPath, key], value)
+  })
+
+  return currentPaths
+}
+
+// function Tabs({}) {
+
+
+//   {CATEGORY_TREE[category[0]].map((subcategory) => {
+//     return (
+//       <li key={subcategory}>
+//           <Link 
+//             href="/[...category]"
+//             as={`/${category[0]}/${subcategory}`}>
+            
+            
+//           </Link>
+//       </li>
+//     );
+//   })}
+// }
+
 //
 export default function CatalogLayout({ children, catalogItems }) {
   const router = useRouter();
-  const {supercategory, category} = router.query
+  const {category} = router.query
+  console.log({category})
   const [selectedSort, setSelectedSort] = useState(SortType.Latest);
   const [viewMode, setViewMode] = useState("tiles"); // tiles, posters, list
   const [isReverseSort, setIsReverseSort] = useState(false);
@@ -126,7 +181,7 @@ export default function CatalogLayout({ children, catalogItems }) {
 
   const selectedCatalogItems = useMemo(() => {
     return catalogItems.filter((catalogItem) => {
-      console.log({ catalogItem, selectedCategory: category });
+      console.log({ catalogItem, category });
       return catalogItem.subcategory === category;
     });
   }, [catalogItems, category]);
@@ -143,7 +198,7 @@ export default function CatalogLayout({ children, catalogItems }) {
 
       <header>
         <h1>
-          <Link href="/">{`Life Makeover Catalog (${supercategory})`}</Link>
+          <Link href="/">{`Life Makeover Catalog (${category.join(' / ')})`}</Link>
         </h1>
         <button onClick={() => console.log("toggle dark mode")}>
           dark mode
@@ -167,11 +222,13 @@ export default function CatalogLayout({ children, catalogItems }) {
         </ul>
         <nav>
           <ul style={{ display: "flex", listStyle: "none" }}>
-            {Object.values(CatalogueCategory).map((category) => {
+            {Object.keys(CatalogueCategory).map((currentCategory) => {
               return (
-                <li key={category}>
-                    <Link href={`/${category}/${categoryMap[category][0]}`}>
-                      {category}
+                <li key={currentCategory}>
+                    <Link 
+                      href="/[...category]"
+                      as={`/${currentCategory}/blah`}> 
+                      {currentCategory}
                     </Link>
                 </li>
               );
@@ -179,11 +236,14 @@ export default function CatalogLayout({ children, catalogItems }) {
           </ul>
 
           <ul style={{ display: "flex", listStyle: "none" }}>
-            {categoryMap[supercategory].map((category) => {
+            {CATEGORY_TREE[category[0]].map((subcategory) => {
               return (
-                <li key={category}>
-                    <Link href={`/${supercategory}/${category}`}>
-                      {category}
+                <li key={subcategory}>
+                    <Link 
+                      href="/[...category]"
+                      as={`/${category[0]}/${subcategory}`}>
+                      blah
+                      
                     </Link>
                 </li>
               );
@@ -240,7 +300,7 @@ export default function CatalogLayout({ children, catalogItems }) {
       <main>
         <article>
           <h2>
-            {supercategory} Catalog - {category} Items
+            {category[0]} Catalog - {category[category.length-1]} Items
           </h2>
           <div style={{ display: "flex" }}>
             {selectedCatalogItems.map((catalogItem) => {
@@ -258,7 +318,7 @@ export default function CatalogLayout({ children, catalogItems }) {
                 >
                   <button onClick={() => console.log("redirect to item page")}>
                     <Link
-                      href={`/${supercategory.toLowerCase()}/${category.toLowerCase()}/${
+                      href={`/${category[0]}/${category[category.length-1]}/${
                         catalogItem.id
                       }`}
                     >

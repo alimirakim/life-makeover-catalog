@@ -14,7 +14,10 @@ export default function Home() {
 
   return (
     <main>
-      Go to <Link href={catalogHref}>catalog</Link>!
+      Go to <Link 
+      href="/[...category]"
+      as={catalogHref}>
+        catalog</Link>!
     </main>
   )
 }

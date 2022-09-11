@@ -1,0 +1,170 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id              Int              @id @default(autoincrement())
+  // avatarImg       String?          @db.VarChar(255)
+  email           String
+  ign             String           @db.VarChar(12)
+  guild           String           @db.VarChar(12) // TODO Doublecheck char limit
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  // characterImages CharacterImage[]
+}
+
+// model CharacterImage {
+//   id         Int      @id @default(autoincrement()) // prefix "character_image__username__name"
+//   userId     Int?
+//   user       User?    @relation(fields: [userId], references: [id])
+//   bodyType   String
+//   // tags        Json? // can be tall, short, thick, thin
+//   dataId     Int?
+//   name       String?
+//   previewImg String?
+//   bodyImg    String?
+//   faceImg    String?
+//   region     String
+// }
+
+
+
+model Item {
+  id                 String            @id
+  starRank           Int
+  name               String // TODO Pinpoint length limit
+  description        String? // TODO Pinpoint length limit
+  categoryPath       String // array Json
+  tag1               String?
+  tag2               String?
+  styleRatings       String?
+  obtainType         String
+  obtainMethod       String
+  // accessAlly         Ally?
+  releaseDate        DateTime
+  setId              String?
+  set                Set?              @relation(fields: [setId], references: [id])
+  // MakeupCollection   MakeupCollection? @relation(fields: [makeupCollectionId], references: [id])
+  // makeupCollectionId String?
+}
+
+
+
+model Set {
+  id         String     @id
+  name       String
+  starRank   Int
+  brand      String?
+  obtainType String
+  mainStyle  String
+  items      Item[]
+}
+
+// model Ally {
+//   id              String   @id
+//   character       String
+//   name            String
+//   rank            AllyRank
+//   styles          Json
+//   evolutionItemId String   @unique
+//   evolutionItem   Item     @relation(fields: [evolutionItemId], references: [id])
+//   triggerSkill    String // Maybe JSON?
+// }
+
+
+// model MakeupCollection {
+//   id           String     @id
+//   name         String
+//   items        Item[]
+//   accessType   AccessType
+//   accessMethod Json
+//   mainStyle    Style // ???
+//   starRating   StarRating
+// }
+
+// model Pose {
+//   id                        String       @id
+//   name                      String
+//   category                  PoseCategory
+//   zoomLevels                Json
+//   supportsHandheld          Boolean
+//   supportsFocus             Boolean
+//   supportsCharacterMovement Boolean
+//   supportsCameraMovement    Boolean
+// }
+
+// model PhotoAsset {
+//   id           String             @id
+//   type         PhotoAssetType
+//   category     PhotoAssetCategory
+//   name         String
+//   accessType   AccessType
+//   AccessMethod Json
+// }
+
+// enum Region {
+//   Global
+//   SEA
+//   Japan
+//   Korea
+// }
+
+// enum AccessType {
+//   Craft
+// }
+
+// enum Tag {
+//   Homey
+// }
+
+// enum StarRating {
+//   THREE
+//   FOUR
+//   FIVE
+//   SIX
+// }
+
+// enum Brand {
+//   AmberShimmer
+// }
+
+// enum Style {
+//   Cool
+// }
+
+
+// enum AllyRank {
+//   SSR
+//   SR
+//   R
+// }
+
+// enum PhotoAssetType {
+//   Scene
+// }
+
+// enum PhotoAssetCategory {
+//   Blah
+// }
+
+// model Pattern {
+// }
+
+// enum BodyType {
+//   Girl
+//   Female
+// }
+
+// enum PoseCategory {
+//   HalfLength
+//   WholeBody
+//   Dynamic
+// }
