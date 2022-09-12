@@ -10,16 +10,15 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  id              Int              @id @default(autoincrement())
-  // avatarImg       String?          @db.VarChar(255)
-  email           String
-  ign             String           @db.VarChar(12)
-  guild           String           @db.VarChar(12) // TODO Doublecheck char limit
-  createdAt       DateTime         @default(now())
-  updatedAt       DateTime         @updatedAt
+// model User {
+//   id              Int              @id
+//   email           String
+//   ign             String           
+//   guild           String           
+//   createdAt       DateTime         @default(now())
+//   updatedAt       DateTime         @updatedAt
   // characterImages CharacterImage[]
-}
+// }
 
 // model CharacterImage {
 //   id         Int      @id @default(autoincrement()) // prefix "character_image__username__name"
@@ -40,16 +39,16 @@ model User {
 model Item {
   id                 String            @id
   starRank           Int
-  name               String // TODO Pinpoint length limit
-  description        String? // TODO Pinpoint length limit
-  categoryPath       String // array Json
+  name               String 
+  description        String?
+  category           String 
   tag1               String?
   tag2               String?
   styleRatings       String?
   obtainType         String
   obtainMethod       String
   // accessAlly         Ally?
-  releaseDate        DateTime
+  // releaseDate        DateTime
   setId              String?
   set                Set?              @relation(fields: [setId], references: [id])
   // MakeupCollection   MakeupCollection? @relation(fields: [makeupCollectionId], references: [id])
