@@ -4,6 +4,7 @@ import {
   FashionCategory,
   MakeupCategory,
 } from "./types/types";
+import getLinkedCategoryMap from "./utils/getLinkedCategoryMap";
 
 export const CATEGORY_TREE = {
   [CatalogueCategory.Fashion]: Object.values(FashionCategory),
@@ -23,6 +24,8 @@ export const CATEGORY_TREE = {
   [CatalogueCategory.Home]: ["Furniture"],
 };
 
+export const LINKED_CATEGORY_MAP = getLinkedCategoryMap(CATEGORY_TREE);
+
 export const FASHION_CATEGORY_EMOJI = {
   [FashionCategory.Set]: "💃",
   [FashionCategory.Hairstyle]: "💇‍♀️",
@@ -35,3 +38,7 @@ export const FASHION_CATEGORY_EMOJI = {
   [FashionCategory.Accessory]: "",
   [FashionCategory.Makeup]: "",
 };
+
+// GAME IDEAS
+// Dressup + VN/detective story + zen daily rhythm chores + educational + home/land customizing + NPC relationships
+// Educational - (quizzes/museums/culture, history/folklore/legend, plant & pet care, art/design, music, meditation/yoga, sports/games, finances, brain academy/language)

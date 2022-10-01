@@ -140,28 +140,20 @@ function Tabs({ categoryPath }: TabsProps) {
     <>
       <div>
         {Object.values(CatalogueCategory).map((category) => {
-          return (
-            <Link href={getNestedCategoryPath(categoryPath, category, 0)}>
-              {category}
-            </Link>
-          );
+          return <Link href={getNestedCategoryPath(category)}>{category}</Link>;
         })}
       </div>
       <div>
-        {categoryPath.split("-").map((category, categoryIndex) => {
+        {categoryPath.split("-").map((category) => {
           return (
             <div>
               <hr />
               {CATEGORY_TREE[category]?.map((subcategory) => {
-                const nestedCategoryPath = getNestedCategoryPath(
-                  categoryPath,
-                  subcategory,
-                  categoryIndex + 1
-                );
-
                 return (
                   <>
-                    <Link href={nestedCategoryPath}>{subcategory}</Link>
+                    <Link href={getNestedCategoryPath(subcategory)}>
+                      {subcategory}
+                    </Link>
                   </>
                 );
               })}

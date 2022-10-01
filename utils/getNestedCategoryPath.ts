@@ -1,34 +1,25 @@
-import { CATEGORY_TREE } from "../constants";
+import { CATEGORY_TREE, LINKED_CATEGORY_MAP } from "../constants";
 
 /**
  * TODO Test
  *
- * TODO Check if lodash has anything to help iterate through nested object layers to check
- * and construct full path only from the child without currentNestedCategoryPath.
- *
- * @param currentNestedCategoryPath ex. The current URL path is /fashion-accessory-ring
  * @param selectedCategory ex. The user clicks the 'Hairstyle' Category under 'Fashion'
- * @param selectedCategoryIndex ex. 0 for 'Fashion', 2 for 'Fashion/Accessory/Ring'
- * @returns nestedCategoryPath - ex. '/fashion-hairstyle'
+ * @returns nestedCategoryPath - ex. 'fashion-hairstyle'
  */
-export default function getNestedCategoryPath(
-  currentNestedCategoryPath: string,
-  selectedCategory: string,
-  selectedCategoryIndex: number
-) {
-  const currentNestedCategories = currentNestedCategoryPath.split("-");
-  const newNestedCategories = [
-    ...currentNestedCategories.slice(0, selectedCategoryIndex),
-    selectedCategory,
-  ];
+export default function getNestedCategoryPath(selectedCategory: string) {
+  let categoryPath = [selectedCategory];
 
-  const hasChildren = CATEGORY_TREE[selectedCategory]?.length > 0;
-  let categoriesPath = newNestedCategories.join("-");
-
-  if (hasChildren) {
-    const firstChild = CATEGORY_TREE[selectedCategory][0];
-    categoriesPath += `-${firstChild}`;
+  let currentParent = LINKED_CATEGORY_MAP[selectedCategory].parent;
+  while (currentParent) {
+    categoryPath.unshift(currentParent);
+    currentParent = LINKED_CATEGORY_MAP[currentParent].parent;
   }
 
-  return categoriesPath;
+  let currentChild = LINKED_CATEGORY_MAP[selectedCategory].firstChild;
+  while (currentChild) {
+    categoryPath.push(currentChild);
+    currentChild = LINKED_CATEGORY_MAP[currentChild].firstChild;
+  }
+
+  return categoryPath.join("-");
 }
