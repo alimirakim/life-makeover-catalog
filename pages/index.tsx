@@ -1,28 +1,17 @@
 import Link from "next/link";
-import {
-  CatalogueCategory,
-  FashionCategory,
-  MakeupCategory,
-} from "../types/types";
+import { CatalogueCategory } from "../types/types";
+import getNestedCategoryPath from "../utils/getNestedCategoryPath";
 
-const DEFAULT_SUPERCATEGORY = CatalogueCategory.Fashion;
-const DEFAULT_CATEGORY_MAP = {
-  [CatalogueCategory.Fashion]: FashionCategory.Set,
-  [CatalogueCategory.Makeup]: MakeupCategory.Collection,
-  [CatalogueCategory.Allies]: "All",
-};
+const DEFAULT_SUPERCATEGORY = CatalogueCategory.fashion;
 
 export default function Home() {
-  const catalogHref =
-    "/" +
-    [DEFAULT_SUPERCATEGORY, DEFAULT_CATEGORY_MAP[DEFAULT_SUPERCATEGORY]].join(
-      "-"
-    );
-
   return (
     <main>
       Go to{" "}
-      <Link href="/[category]" as={catalogHref}>
+      <Link
+        href="/[category]"
+        as={getNestedCategoryPath(DEFAULT_SUPERCATEGORY)}
+      >
         catalog
       </Link>
       !

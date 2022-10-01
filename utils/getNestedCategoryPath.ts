@@ -8,6 +8,10 @@ import { CATEGORY_TREE, LINKED_CATEGORY_MAP } from "../constants";
  */
 export default function getNestedCategoryPath(selectedCategory: string) {
   let categoryPath = [selectedCategory];
+  console.log({
+    selectedCategory,
+    linked: LINKED_CATEGORY_MAP[selectedCategory],
+  });
 
   let currentParent = LINKED_CATEGORY_MAP[selectedCategory].parent;
   while (currentParent) {

@@ -2,6 +2,8 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
+// See SO Answer: https://stackoverflow.com/a/66626333
+// CLI command: node --loader ts-node/esm prisma/script.ts
 async function main() {
   // ... you will write your Prisma Client queries here
 
@@ -11,20 +13,20 @@ async function main() {
   if (true) {
     const set = await prisma.set.create({
       data: {
-        id: "set__sleepy_bunny",
+        id: "fashion__set__sleepy_bunny",
         name: "Sleepy Bunny",
         starRank: 4,
         brand: "Amber Shimmer",
         obtainType: "craft",
-        mainStyle: "Sweet",
+        mainStyle: "sweet",
         items: {
           create: [
             {
-              id: "item__dress__sleepy_bunny",
+              id: "fashion__dress__sleepy_bunny",
               starRank: 4,
               name: "Sleepy Bunny",
               // description: '',
-              category: "Dress",
+              category: "dress",
               tag1: "Homey",
               tag2: "Fairytale",
               // styleRatings: {}
@@ -33,7 +35,7 @@ async function main() {
                 craftCategory: "Story Quest",
                 materialCost: [
                   {
-                    itemId: "item__shoes__lunar_goddess",
+                    itemId: "fashion__shoes__lunar_goddess",
                     quantity: 1,
                   },
                 ],
@@ -41,11 +43,11 @@ async function main() {
             },
 
             {
-              id: "item__handheld__dreamy_bunny",
+              id: "fashion__handheld__dreamy_bunny",
               starRank: 4,
               name: "Dreamy Bunny",
               // description: '',
-              category: "Handheld",
+              category: "handheld",
               tag1: "Animal",
               tag2: "Fairytale",
               // styleRatings: {}
@@ -54,11 +56,11 @@ async function main() {
                 craftCategory: "Story Quest",
                 materialCost: [
                   {
-                    itemId: "item__socks__super_girl",
+                    itemId: "fashion__socks__super_girl",
                     quantity: 2,
                   },
                   {
-                    itemId: "item__face__tender_gaze",
+                    itemId: "fashion__face__tender_gaze",
                     quantity: 1,
                   },
                 ],
@@ -66,11 +68,11 @@ async function main() {
             },
 
             {
-              id: "item__hat__fluffy_bunny",
+              id: "fashion__hat__fluffy_bunny",
               starRank: 4,
               name: "Fluffy Bunny",
               // description: '',
-              category: "Hat",
+              category: "hat",
               tag1: "Animal",
               tag2: "Fairytale",
               // styleRatings: {}
@@ -79,7 +81,7 @@ async function main() {
                 craftCategory: "Story Quest",
                 materialCost: [
                   {
-                    itemId: "item__socks__flower_dew",
+                    itemId: "fashion__socks__flower_dew",
                     quantity: 2,
                   },
                 ],
@@ -87,11 +89,11 @@ async function main() {
             },
 
             {
-              id: "item__wrist__candy_kingdom",
+              id: "fashion__wrist__candy_kingdom",
               starRank: 4,
               name: "Fluffy Bunny",
               // description: '',
-              category: "Wrist",
+              category: "wrist",
               tag1: "Homey",
               tag2: "Fairytale",
               // styleRatings: {}
@@ -100,7 +102,7 @@ async function main() {
                 craftCategory: "Story Quest",
                 materialCost: [
                   {
-                    itemId: "item__socks__flower_shade",
+                    itemId: "fashion__socks__flower_shade",
                     quantity: 2,
                   },
                 ],
@@ -108,11 +110,11 @@ async function main() {
             },
 
             {
-              id: "item__socks__sleepy_bunny",
+              id: "fashion__socks__sleepy_bunny",
               starRank: 4,
               name: "Sleepy Bunny",
               // description: '',
-              category: "Socks",
+              category: "socks",
               tag1: "Homey",
               tag2: "Fairytale",
               // styleRatings: {}
@@ -121,7 +123,7 @@ async function main() {
                 craftCategory: "Story Quest",
                 materialCost: [
                   {
-                    itemId: "item__socks__flower_dew",
+                    itemId: "fashion__socks__flower_dew",
                     quantity: 2,
                   },
                 ],
@@ -129,11 +131,11 @@ async function main() {
             },
 
             {
-              id: "item__shoes__pink_lady",
+              id: "fashion__shoes__pink_lady",
               starRank: 4,
               name: "Pink Lady",
               // description: '',
-              category: "Shoes",
+              category: "shoes",
               tag1: "Homey",
               tag2: "Fairytale",
               // styleRatings: {}
@@ -142,11 +144,11 @@ async function main() {
                 craftCategory: "Story Quest",
                 materialCost: [
                   {
-                    itemId: "item__socks__flower_shade",
+                    itemId: "fashion__socks__flower_shade",
                     quantity: 2,
                   },
                   {
-                    itemId: "item__hair__starry_soda",
+                    itemId: "fashion__hair__starry_soda",
                     quantity: 2,
                   },
                 ],
@@ -154,11 +156,11 @@ async function main() {
             },
 
             {
-              id: "item__hairstyle__fluffy_dream",
+              id: "fashion__hairstyle__fluffy_dream",
               starRank: 4,
               name: "Fluffy Dream",
               // description: '',
-              category: "Hairstyle",
+              category: "hairstyle",
               tag1: "Homey",
               tag2: "Fairytale",
               // styleRatings: {}
@@ -167,11 +169,11 @@ async function main() {
                 craftCategory: "Story Quest",
                 materialCost: [
                   {
-                    itemId: "item__socks__super_girl",
+                    itemId: "fashion__socks__super_girl",
                     quantity: 2,
                   },
                   {
-                    itemId: "item__earrings__love_melody",
+                    itemId: "fashion__earrings__love_melody",
                     quantity: 2,
                   },
                 ],
@@ -182,8 +184,6 @@ async function main() {
       },
     });
   }
-
-  // console.log(set);
 
   const sets = await prisma.set.findMany({
     include: {
@@ -206,8 +206,8 @@ main()
     process.exit(1);
   });
 
-//   set__sleepy_bunny: {
-//     id: 'set__sleepy_bunny',
+//   fashion__set__sleepy_bunny: {
+//     id: 'fashion__set__sleepy_bunny',
 //     name: 'Sleepy Bunny',
 //     starRating: 4,
 //     brand: 'Amber Shimmer',
@@ -216,13 +216,13 @@ main()
 //         category: 'storyQuest',
 //     },
 //     itemIds: [
-//         'item__fluffy_dream',
-//         'item__sleepy_bunny',
-//         'item__fairytale_dream',
-//         'item__pink_lady',
-//         'item__fluffy_bunny',
-//         'item__candy_kingdom',
-//         'item__dreamy_bunny',
+//         'fashion__fluffy_dream',
+//         'fashion__sleepy_bunny',
+//         'fashion__fairytale_dream',
+//         'fashion__pink_lady',
+//         'fashion__fluffy_bunny',
+//         'fashion__candy_kingdom',
+//         'fashion__dreamy_bunny',
 //     ],
 //     mainStyles: ['Sweet','Lively'],
 //     tags: ['Fairytale','Homey'],

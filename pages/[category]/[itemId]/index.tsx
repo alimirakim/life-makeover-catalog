@@ -2,19 +2,34 @@ import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import startCase from "lodash/startCase";
 import prisma from "../../../prisma/prisma";
+import getNestedCategoryPath from "../../../utils/getNestedCategoryPath";
+import { FashionCategory } from "../../../types/types";
 
 export async function getServerSideProps({ params }) {
   const itemId = params.itemId;
+  let item;
 
-  const item = await prisma.item.findFirst({
-    where: {
-      id: itemId,
-    },
-    include: {
-      set: true,
-    },
-  });
+  if (itemId.split("__")[1] === FashionCategory.set) {
+    item = await prisma.set.findFirst({
+      where: {
+        id: itemId,
+      },
+      include: {
+        items: true,
+      },
+    });
+  } else {
+    item = await prisma.item.findFirst({
+      where: {
+        id: itemId,
+      },
+      include: {
+        set: true,
+      },
+    });
+  }
 
   return {
     props: {
@@ -35,6 +50,8 @@ export default function ItemPage({ item }) {
   const { itemId } = router.query;
   console.log({ router, itemId, item });
 
+  const isSet = !item.category;
+
   return (
     <>
       <Head>
@@ -43,13 +60,16 @@ export default function ItemPage({ item }) {
 
       <header>
         <h1>
-          {item.name} [{item.category}] {getStars(item.starRank)}
+          {item.name} [{isSet ? "Set" : item.category}]{" "}
+          {getStars(item.starRank)}
         </h1>
         {item.set ? (
           <small>
             Part of set{" "}
             <Link
-              href={`/fashion-set/${item.setId}`}
+              href={`/${getNestedCategoryPath(FashionCategory.set)}/${
+                item.setId
+              }`}
             >{`"${item.set.name}"`}</Link>
           </small>
         ) : (
@@ -60,31 +80,35 @@ export default function ItemPage({ item }) {
       <main>
         <Image src="/images/" height={200} width={100} alt={item.name} />
 
-        <section>
-          <h2>Tags</h2>
-          <ul>
-            {item.tag1 && <li>{item.tag1}</li>}
-            {item.tag2 && <li>{item.tag2}</li>}
-          </ul>
-        </section>
+        {!isSet && (
+          <>
+            <section>
+              <h2>Tags</h2>
+              <ul>
+                {item.tag1 && <li>{item.tag1}</li>}
+                {item.tag2 && <li>{item.tag2}</li>}
+              </ul>
+            </section>
 
-        <section>
-          <h2>Style Ratings</h2>
-          TBA
-        </section>
+            <section>
+              <h2>Style Ratings</h2>
+              TBA
+            </section>
 
-        <section>
-          <h2>Description</h2>
-          {item.description}
-        </section>
+            <section>
+              <h2>Description</h2>
+              {item.description}
+            </section>
 
-        <section>
-          <h2>Obtain Method</h2>
-          <ObtainMethodDescription
-            obtainType={item.obtainType}
-            obtainMethodJson={item.obtainMethod}
-          />
-        </section>
+            <section>
+              <h2>Obtain Method</h2>
+              <ObtainMethodDescription
+                obtainType={item.obtainType}
+                obtainMethodJson={item.obtainMethod}
+              />
+            </section>
+          </>
+        )}
 
         <section>
           <h2>Gallery</h2>
@@ -119,11 +143,15 @@ function ObtainMethodDescription({ obtainType, obtainMethodJson }) {
           <dd>
             <dl>
               {obtainMethod.materialCost.map((material) => {
+                const [_, itemCategory, itemName] = material.itemId.split("__");
+
                 return (
                   <>
                     <dt>Item</dt>
                     <dd>
-                      <Link href={material.itemId}>{material.itemId}</Link>
+                      <Link href={getNestedCategoryPath(itemCategory)}>
+                        {startCase(itemName)}
+                      </Link>
                     </dd>
                     <dt>Quantity</dt>
                     <dd>{material.quantity}</dd>

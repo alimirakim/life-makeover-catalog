@@ -7,36 +7,36 @@ import {
 import getLinkedCategoryMap from "./utils/getLinkedCategoryMap";
 
 export const CATEGORY_TREE = {
-  [CatalogueCategory.Fashion]: Object.values(FashionCategory),
-  [FashionCategory.Accessory]: Object.values(AccessoryCategory),
-  [CatalogueCategory.Makeup]: Object.values(MakeupCategory),
-  [CatalogueCategory.Allies]: ["All", "SSR", "SR", "R"],
-  [CatalogueCategory.Photo]: [
-    "Pose",
-    "Scene",
-    "Cute Effect",
-    "Effect",
-    "Filter",
-    "Frame",
-    "Sticker",
-    "Brush",
+  [CatalogueCategory.fashion]: Object.values(FashionCategory),
+  [FashionCategory.accessory]: Object.values(AccessoryCategory),
+  [CatalogueCategory.makeup]: Object.values(MakeupCategory),
+  [CatalogueCategory.allies]: ["all", "ssr", "sr", "r"],
+  [CatalogueCategory.photo]: [
+    "pose",
+    "scene",
+    "cute_effect",
+    "effect",
+    "filter",
+    "frame",
+    "sticker",
+    "brush",
   ],
-  [CatalogueCategory.Home]: ["Furniture"],
+  [CatalogueCategory.home]: ["furniture"],
 };
 
 export const LINKED_CATEGORY_MAP = getLinkedCategoryMap(CATEGORY_TREE);
 
 export const FASHION_CATEGORY_EMOJI = {
-  [FashionCategory.Set]: "💃",
-  [FashionCategory.Hairstyle]: "💇‍♀️",
-  [FashionCategory.Dress]: "👗",
-  [FashionCategory.Coat]: "🧥",
-  [FashionCategory.Top]: "👚",
-  [FashionCategory.Bottom]: "🩳",
-  [FashionCategory.Socks]: "🧦",
-  [FashionCategory.Shoes]: "👠",
-  [FashionCategory.Accessory]: "",
-  [FashionCategory.Makeup]: "",
+  [FashionCategory.set]: "💃",
+  [FashionCategory.hairstyle]: "💇‍♀️",
+  [FashionCategory.dress]: "👗",
+  [FashionCategory.coat]: "🧥",
+  [FashionCategory.top]: "👚",
+  [FashionCategory.bottom]: "🩳",
+  [FashionCategory.socks]: "🧦",
+  [FashionCategory.shoes]: "👠",
+  [FashionCategory.accessory]: "",
+  [FashionCategory.makeup]: "",
 };
 
 // GAME IDEAS
