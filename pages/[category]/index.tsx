@@ -13,24 +13,8 @@ import {
   Style,
   Tag,
 } from "../../types/types";
-
-const CATEGORY_TREE = {
-  [CatalogueCategory.Fashion]: Object.values(FashionCategory),
-  [FashionCategory.Accessory]: Object.values(AccessoryCategory),
-  [CatalogueCategory.Makeup]: Object.values(MakeupCategory),
-  [CatalogueCategory.Allies]: ["All", "SSR", "SR", "R"],
-  [CatalogueCategory.Photo]: [
-    "Pose",
-    "Scene",
-    "Cute Effect",
-    "Effect",
-    "Filter",
-    "Frame",
-    "Sticker",
-    "Brush",
-  ],
-  [CatalogueCategory.Home]: ["Furniture"],
-};
+import getNestedCategoryPath from "../../utils/getNestedCategoryPath";
+import { CATEGORY_TREE } from "../../constants";
 
 enum SortType {
   Latest = "Latest",
@@ -147,71 +131,37 @@ export async function maybeGetStaticPaths() {
   };
 }
 
-function getCategoryPaths(paths, currentPath, currentCategory) {
-  if (typeof currentCategory === "string") {
-    return [
-      ...paths,
-      {
-        params: {
-          category: [...currentPath, currentCategory],
-        },
-      },
-    ];
-  }
-
-  let currentPaths = [...paths];
-  console.log({ currentPaths });
-  Object.entries(currentCategory).forEach(([key, value]) => {
-    currentPaths = getCategoryPaths(currentPaths, [...currentPath, key], value);
-  });
-
-  return currentPaths;
+interface TabsProps {
+  categoryPath: string;
 }
 
-function getNestedCategoryPath(nestedCategories) {
-  let categoriesPath = nestedCategories.join("-");
-  const lastCategory = nestedCategories[nestedCategories.length - 1];
-  const hasChildren = CATEGORY_TREE[lastCategory]?.length > 0;
-
-  if (hasChildren) {
-    const firstChild = CATEGORY_TREE[lastCategory][0];
-    categoriesPath += `-${firstChild}`;
-  }
-
-  return categoriesPath;
-}
-
-function Tabs({ categoryPath }) {
+function Tabs({ categoryPath }: TabsProps) {
   return (
     <>
       <div>
         {Object.values(CatalogueCategory).map((category) => {
           return (
-            <Link href={getNestedCategoryPath([category])}>{category}</Link>
+            <Link href={getNestedCategoryPath(categoryPath, category, 0)}>
+              {category}
+            </Link>
           );
         })}
       </div>
       <div>
-        {categoryPath.split("-").map((category) => {
+        {categoryPath.split("-").map((category, categoryIndex) => {
           return (
             <div>
               <hr />
               {CATEGORY_TREE[category]?.map((subcategory) => {
-                const currentNestedCategories = categoryPath.split("-");
-                const newNestedCategories = [
-                  ...currentNestedCategories.slice(
-                    0,
-                    currentNestedCategories.length - 1
-                  ),
+                const nestedCategoryPath = getNestedCategoryPath(
+                  categoryPath,
                   subcategory,
-                ];
-                console.log({ currentNestedCategories, newNestedCategories });
+                  categoryIndex + 1
+                );
 
                 return (
                   <>
-                    <Link href={getNestedCategoryPath(newNestedCategories)}>
-                      {subcategory}
-                    </Link>
+                    <Link href={nestedCategoryPath}>{subcategory}</Link>
                   </>
                 );
               })}
@@ -221,78 +171,15 @@ function Tabs({ categoryPath }) {
       </div>
     </>
   );
+}
 
-  // return (
-  //   <>
-  //     <div>
-  //       {Object.keys(CATEGORY_TREE).map((category) => {
-  //         return (
-  //           <Tab
-  //             key={category}
-  //             label={category}
-  //             // categoryPath={[]}
-  //             path={"/" + [category, CATEGORY_TREE[category][0]].join("/")}
-  //           />
-  //         );
-  //       })}
-  //     </div>
-
-  //     {categoryPath
-  //       .filter((category) => CATEGORY_TREE[category])
-  //       .map((category, i) => {
-  //         currentCategory = CATEGORY_TREE[category];
-  //         return (
-  //           <div>
-  //             {currentCategory.map((subcategory) => {
-  //               console.log({subcateg})
-  //               const path =
-  //                 "/" +
-  //                 (CATEGORY_TREE[subcategory]
-  //                   ? [...categoryPath, CATEGORY_TREE[subcategory][0]]
-  //                   : categoryPath
-  //                 ).join("/");
-  //               return (
-  //                 <Tab key={subcategory} label={subcategory} path={path} />
-  //               );
-  //             })}
-  //           </div>
-  //         );
-  //       })}
-  //   </>
-  // );
-
-  function Tab({ label, path }) {
-    // console.log({ label, categoryPath });
-    return (
-      <li>
-        <Link href={path}>{label}</Link>
-      </li>
-    );
-  }
-
-  // return (
-  //   <>
-  //     {typeof categoryPath === "string" ? (
-  //       <li key={categoryPath}>{categoryPath}</li>
-  //     ) : (
-  //       Object.entries(categoryPath).map(([key, value]) => {
-  //         return <li key={key}>{key}</li>;
-  //       })
-  //     )}
-  //   </>
-  // );
-
-  // {CATEGORY_TREE[category[0]].map((subcategory) => {
-  //   return (
-  //     <li key={subcategory}>
-  //         <Link
-  //           href="/[...category]"
-  //           as={`/${category[0]}/${subcategory}`}>
-
-  //         </Link>
-  //     </li>
-  //   );
-  // })}
+function Tab({ label, path }) {
+  // console.log({ label, categoryPath });
+  return (
+    <li>
+      <Link href={path}>{label}</Link>
+    </li>
+  );
 }
 
 //
@@ -410,48 +297,53 @@ export default function CatalogLayout({ children, sets, items }) {
             {categories[0]} Catalog - {categories[categories.length - 1]} Items
           </h2>
           <div style={{ display: "flex" }}>
-            {items.map((catalogItem) => {
-              console.log({ catalogItem });
-              return (
-                <section
-                  key={catalogItem.id}
-                  style={{
-                    border: "1px dashed pink",
-                    borderRadius: 16,
-                    margin: 8,
-                    width: "max-content",
-                    padding: 8,
-                    backgroundColor: "lightyellow",
-                  }}
-                >
-                  <button onClick={() => console.log("redirect to item page")}>
-                    <Link
-                      href={`/${categories[0]}-${
-                        categories[categories.length - 1]
-                      }/${catalogItem.id}`}
+            {items.length
+              ? items.map((catalogItem) => {
+                  return (
+                    <section
+                      key={catalogItem.id}
+                      style={{
+                        border: "1px dashed pink",
+                        borderRadius: 16,
+                        margin: 8,
+                        width: "max-content",
+                        padding: 8,
+                        backgroundColor: "lightyellow",
+                      }}
                     >
-                      {catalogItem.name}
-                    </Link>
-                  </button>
+                      <button
+                        onClick={() => console.log("redirect to item page")}
+                      >
+                        <Link
+                          href={`/${categories[0]}-${
+                            categories[categories.length - 1]
+                          }/${catalogItem.id}`}
+                        >
+                          {catalogItem.name}
+                        </Link>
+                      </button>
 
-                  <Image
-                    src={`/images/${catalogItem.id}`}
-                    height={100}
-                    width={100}
-                    alt="item icon or preview image"
-                  />
-                  <hr />
+                      <Image
+                        src={`/images/${catalogItem.id}`}
+                        height={100}
+                        width={100}
+                        alt="item icon or preview image"
+                      />
+                      <hr />
 
-                  <ObtainedButton />
-                  <WishlistButton />
-                  <HeartMeter />
-                </section>
-              );
-            })}
+                      <ObtainedButton />
+                      <WishlistButton />
+                      <HeartMeter />
+                    </section>
+                  );
+                })
+              : "There are no items matching this category"}
           </div>
 
-          {sortedCatalogItems.length && (
+          {sortedCatalogItems.length ? (
             <CatalogItemPopup catalogItem={sortedCatalogItems[0]} />
+          ) : (
+            ""
           )}
         </article>
 
@@ -506,7 +398,7 @@ function CatalogItemPopup({ catalogItem }) {
         alt="item preview image"
       />
       <hr />
-      <h4>Obtain Method</h4>
+      <h3>Obtain Method</h3>
       TBA
       <h4>Gallery</h4>
       {catalogItem.gallery?.map((image) => {

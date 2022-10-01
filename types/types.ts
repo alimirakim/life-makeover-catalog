@@ -100,6 +100,19 @@ export enum FashionCategory {
   Makeup = "Makeup",
 }
 
+const FASHION_CATEGORY_EMOJI = {
+  [FashionCategory.Set]: "💃",
+  [FashionCategory.Hairstyle]: "💇‍♀️",
+  [FashionCategory.Dress]: "👗",
+  [FashionCategory.Coat]: "🧥",
+  [FashionCategory.Top]: "👚",
+  [FashionCategory.Bottom]: "🩳",
+  [FashionCategory.Socks]: "🧦",
+  [FashionCategory.Shoes]: "👠",
+  [FashionCategory.Accessory]: "",
+  [FashionCategory.Makeup]: "",
+};
+
 export enum AccessoryCategory {
   Hat = "Hat",
   Hair = "Hair",
