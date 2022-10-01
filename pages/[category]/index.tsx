@@ -15,6 +15,7 @@ import {
 } from "../../types/types";
 import getNestedCategoryPath from "../../utils/getNestedCategoryPath";
 import { CATEGORY_TREE } from "../../constants";
+import HeaderBar from "../../components/HeaderBar/HeaderBar";
 
 enum SortType {
   Latest = "Latest",
@@ -196,91 +197,56 @@ export default function CatalogLayout({ children, sets, items }) {
       </Head>
 
       <header>
-        <h1>
-          <Link href="/">{`Life Makeover Catalog (${category})`}</Link>
-        </h1>
-        <button onClick={() => console.log("toggle dark mode")}>
-          dark mode
-        </button>
-        dropdownsettings:
-        <ul>
-          <li>
-            <button onClick={() => "use firebase and oauth!!"}>
-              Login or Sign up
-            </button>
-          </li>
-          <li>
-            <Link href={`/users/[user-id-here]`}>User Profile</Link>
-          </li>
-          <li>
-            <Link href="/me">My settings</Link>
-          </li>
-          <li>
-            <Link href="/admin">Admin Board</Link>
-          </li>
+        <HeaderBar title={category} />
+
+        <ul style={{ listStyle: "none" }}>
+          <Tabs categoryPath={category} />
         </ul>
-        <nav>
-          <ul style={{ display: "flex", listStyle: "none" }}>
-            {/* {Object.keys(CatalogueCategory).map((currentCategory) => {
-              return (
-                <li key={currentCategory}>
-                  <Link href="/[...category]" as={`/${currentCategory}/blah`}>
-                    {currentCategory}
-                  </Link>
-                </li>
-              );
-            })} */}
-          </ul>
 
-          <ul style={{ listStyle: "none" }}>
-            <Tabs categoryPath={category} />
-          </ul>
+        {/* TODO Add navlinks for final layer of nested categories ex. accessories */}
 
-          {/* TODO Add navlinks for final layer of nested categories ex. accessories */}
+        <hr />
 
-          <hr />
+        <div>
+          View mode:
+          {Object.values(ViewMode).map((viewMode) => {
+            return (
+              <button key={viewMode} onClick={() => setViewMode(viewMode)}>
+                {viewMode}
+              </button>
+            );
+          })}
+        </div>
 
-          <div>
-            View mode:
-            {Object.values(ViewMode).map((viewMode) => {
-              return (
-                <button key={viewMode} onClick={() => setViewMode(viewMode)}>
-                  {viewMode}
-                </button>
-              );
-            })}
-          </div>
+        <div>
+          Filter by:{" "}
+          {filters.map((filter) => (
+            <div key={filter}>
+              {filter}{" "}
+              <button onClick={() => console.log("remove filter")}>X</button>
+            </div>
+          ))}
+          <button onClick={() => console.log("open filter popup")}>+</button>
+        </div>
+        <div>
+          <button onClick={() => setIsReverseSort(!isReverseSort)}>
+            {isReverseSort ? "Desc" : "Asc"}
+          </button>{" "}
+          Sort by:{" "}
+          {Object.values(SortType).map((sortBy) => {
+            return (
+              <button
+                key={sortBy}
+                onClick={() => setSelectedSort(sortBy)}
+                className={sortBy === selectedSort && "selected"}
+              >
+                {sortBy}
+              </button>
+            );
+          })}
+        </div>
 
-          <div>
-            Filter by:{" "}
-            {filters.map((filter) => (
-              <div key={filter}>
-                {filter}{" "}
-                <button onClick={() => console.log("remove filter")}>X</button>
-              </div>
-            ))}
-            <button onClick={() => console.log("open filter popup")}>+</button>
-          </div>
-          <div>
-            <button onClick={() => setIsReverseSort(!isReverseSort)}>
-              {isReverseSort ? "Desc" : "Asc"}
-            </button>{" "}
-            Sort by:{" "}
-            {Object.values(SortType).map((sortBy) => {
-              return (
-                <button
-                  key={sortBy}
-                  onClick={() => setSelectedSort(sortBy)}
-                  className={sortBy === selectedSort && "selected"}
-                >
-                  {sortBy}
-                </button>
-              );
-            })}
-          </div>
-
-          <hr />
-        </nav>
+        <hr />
       </header>
 
       <main>

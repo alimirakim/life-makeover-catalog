@@ -6,6 +6,7 @@ import startCase from "lodash/startCase";
 import prisma from "../../../prisma/prisma";
 import getNestedCategoryPath from "../../../utils/getNestedCategoryPath";
 import { FashionCategory } from "../../../types/types";
+import HeaderBar from "../../../components/HeaderBar/HeaderBar";
 
 export async function getServerSideProps({ params }) {
   const itemId = params.itemId;
@@ -59,10 +60,11 @@ export default function ItemPage({ item }) {
       </Head>
 
       <header>
-        <h1>
-          {item.name} [{isSet ? "Set" : item.category}]{" "}
-          {getStars(item.starRank)}
-        </h1>
+        <HeaderBar
+          title={`${item.name} [${isSet ? "Set" : item.category}] ${getStars(
+            item.starRank
+          )}`}
+        />
         {item.set ? (
           <small>
             Part of set{" "}
@@ -121,7 +123,7 @@ export default function ItemPage({ item }) {
   );
 }
 
-function getStars(starRank) {
+function getStars(starRank: number) {
   const stars = "⭐".repeat(starRank);
   return stars;
 }
