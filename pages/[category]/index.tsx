@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import prisma from "../../prisma/prisma";
 
 import {
   AccessoryCategory,
@@ -11,19 +12,11 @@ import {
   MakeupCategory,
   Style,
   Tag,
-} from "../types/types";
-
-// /fashion/dress
-// /fashion/accessory/hat
-// /fashion/accessory/earrings
-// /makeup/all
-// /makeup/lipstick
+} from "../../types/types";
 
 const CATEGORY_TREE = {
-  [CatalogueCategory.Fashion]: [
-    ...Object.values(FashionCategory), 
-    {[FashionCategory.Accessory]: Object.values(AccessoryCategory)},
-  ],
+  [CatalogueCategory.Fashion]: Object.values(FashionCategory),
+  [FashionCategory.Accessory]: Object.values(AccessoryCategory),
   [CatalogueCategory.Makeup]: Object.values(MakeupCategory),
   [CatalogueCategory.Allies]: ["All", "SSR", "SR", "R"],
   [CatalogueCategory.Photo]: [
@@ -54,7 +47,27 @@ enum ViewMode {
   List = "List",
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps({ params }) {
+  const categories = params.category.split("-");
+  const category = categories[categories.length - 1];
+
+  const items =
+    category === FashionCategory.Set
+      ? await prisma.set.findMany()
+      : await prisma.item.findMany({
+          where: {
+            category,
+          },
+        });
+
+  return {
+    props: {
+      items,
+    },
+  };
+}
+
+export async function maybeGetStaticProps() {
   const catalogItems = [
     {
       id: "hair-a",
@@ -107,88 +120,195 @@ export async function getStaticProps() {
   };
 }
 
-
-export async function getStaticPaths() {
-//   const paths = Object.values(CatalogueCategory).flatMap(supercategory => {
-//     return Object.values(CATEGORY_TREE[supercategory]).map(category => {
-//       return {
-//     params: {
-//         supercategory: supercategory,
-//         category: category
-//       }
-//     }
-//   })
-// })
+export async function maybeGetStaticPaths() {
+  //   const paths = Object.values(CatalogueCategory).flatMap(supercategory => {
+  //     return Object.values(CATEGORY_TREE[supercategory]).map(category => {
+  //       return {
+  //     params: {
+  //         supercategory: supercategory,
+  //         category: category
+  //       }
+  //     }
+  //   })
+  // })
   // const paths = getCategoryPaths([], [], CATEGORY_TREE)
-  const paths = [{
-    params: {
-      category: ['Fashion', 'Set']
-    } 
-  }]
-  console.log(paths)
+  // const paths = [
+  //   {
+  //     params: {
+  //       category: ["Fashion", "Set"],
+  //     },
+  //   },
+  // ];
+  console.log(paths);
 
   return {
     paths,
     fallback: false,
-  }
+  };
 }
 
 function getCategoryPaths(paths, currentPath, currentCategory) {
-
-  if (typeof currentCategory === 'string') {
-    return [...paths, {
-      params: {
-        category: [...currentPath, currentCategory],
-      }
-    }]
+  if (typeof currentCategory === "string") {
+    return [
+      ...paths,
+      {
+        params: {
+          category: [...currentPath, currentCategory],
+        },
+      },
+    ];
   }
 
-  let currentPaths = [...paths]
-  console.log({currentPaths})
+  let currentPaths = [...paths];
+  console.log({ currentPaths });
   Object.entries(currentCategory).forEach(([key, value]) => {
-    currentPaths = getCategoryPaths(currentPaths, [...currentPath, key], value)
-  })
+    currentPaths = getCategoryPaths(currentPaths, [...currentPath, key], value);
+  });
 
-  return currentPaths
+  return currentPaths;
 }
 
-// function Tabs({}) {
+function getNestedCategoryPath(nestedCategories) {
+  let categoriesPath = nestedCategories.join("-");
+  const lastCategory = nestedCategories[nestedCategories.length - 1];
+  const hasChildren = CATEGORY_TREE[lastCategory]?.length > 0;
 
+  if (hasChildren) {
+    const firstChild = CATEGORY_TREE[lastCategory][0];
+    categoriesPath += `-${firstChild}`;
+  }
 
-//   {CATEGORY_TREE[category[0]].map((subcategory) => {
-//     return (
-//       <li key={subcategory}>
-//           <Link 
-//             href="/[...category]"
-//             as={`/${category[0]}/${subcategory}`}>
-            
-            
-//           </Link>
-//       </li>
-//     );
-//   })}
-// }
+  return categoriesPath;
+}
+
+function Tabs({ categoryPath }) {
+  return (
+    <>
+      <div>
+        {Object.values(CatalogueCategory).map((category) => {
+          return (
+            <Link href={getNestedCategoryPath([category])}>{category}</Link>
+          );
+        })}
+      </div>
+      <div>
+        {categoryPath.split("-").map((category) => {
+          return (
+            <div>
+              <hr />
+              {CATEGORY_TREE[category]?.map((subcategory) => {
+                const currentNestedCategories = categoryPath.split("-");
+                const newNestedCategories = [
+                  ...currentNestedCategories.slice(
+                    0,
+                    currentNestedCategories.length - 1
+                  ),
+                  subcategory,
+                ];
+                console.log({ currentNestedCategories, newNestedCategories });
+
+                return (
+                  <>
+                    <Link href={getNestedCategoryPath(newNestedCategories)}>
+                      {subcategory}
+                    </Link>
+                  </>
+                );
+              })}
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+
+  // return (
+  //   <>
+  //     <div>
+  //       {Object.keys(CATEGORY_TREE).map((category) => {
+  //         return (
+  //           <Tab
+  //             key={category}
+  //             label={category}
+  //             // categoryPath={[]}
+  //             path={"/" + [category, CATEGORY_TREE[category][0]].join("/")}
+  //           />
+  //         );
+  //       })}
+  //     </div>
+
+  //     {categoryPath
+  //       .filter((category) => CATEGORY_TREE[category])
+  //       .map((category, i) => {
+  //         currentCategory = CATEGORY_TREE[category];
+  //         return (
+  //           <div>
+  //             {currentCategory.map((subcategory) => {
+  //               console.log({subcateg})
+  //               const path =
+  //                 "/" +
+  //                 (CATEGORY_TREE[subcategory]
+  //                   ? [...categoryPath, CATEGORY_TREE[subcategory][0]]
+  //                   : categoryPath
+  //                 ).join("/");
+  //               return (
+  //                 <Tab key={subcategory} label={subcategory} path={path} />
+  //               );
+  //             })}
+  //           </div>
+  //         );
+  //       })}
+  //   </>
+  // );
+
+  function Tab({ label, path }) {
+    // console.log({ label, categoryPath });
+    return (
+      <li>
+        <Link href={path}>{label}</Link>
+      </li>
+    );
+  }
+
+  // return (
+  //   <>
+  //     {typeof categoryPath === "string" ? (
+  //       <li key={categoryPath}>{categoryPath}</li>
+  //     ) : (
+  //       Object.entries(categoryPath).map(([key, value]) => {
+  //         return <li key={key}>{key}</li>;
+  //       })
+  //     )}
+  //   </>
+  // );
+
+  // {CATEGORY_TREE[category[0]].map((subcategory) => {
+  //   return (
+  //     <li key={subcategory}>
+  //         <Link
+  //           href="/[...category]"
+  //           as={`/${category[0]}/${subcategory}`}>
+
+  //         </Link>
+  //     </li>
+  //   );
+  // })}
+}
 
 //
-export default function CatalogLayout({ children, catalogItems }) {
+export default function CatalogLayout({ children, sets, items }) {
   const router = useRouter();
-  const {category} = router.query
-  console.log({category})
+  const { category } = router.query;
+  const categories = category ? category.split("-") : [];
+
   const [selectedSort, setSelectedSort] = useState(SortType.Latest);
   const [viewMode, setViewMode] = useState("tiles"); // tiles, posters, list
   const [isReverseSort, setIsReverseSort] = useState(false);
   const [filters, setFilters] = useState([]);
 
-  const selectedCatalogItems = useMemo(() => {
-    return catalogItems.filter((catalogItem) => {
-      console.log({ catalogItem, category });
-      return catalogItem.subcategory === category;
-    });
-  }, [catalogItems, category]);
-
   const sortedCatalogItems = useMemo(() => {
-    return sortCatalog(selectedSort, catalogItems);
-  }, [selectedSort, catalogItems]);
+    return sortCatalog(selectedSort, items);
+  }, [selectedSort, items]);
 
   return (
     <>
@@ -198,7 +318,7 @@ export default function CatalogLayout({ children, catalogItems }) {
 
       <header>
         <h1>
-          <Link href="/">{`Life Makeover Catalog (${category.join(' / ')})`}</Link>
+          <Link href="/">{`Life Makeover Catalog (${category})`}</Link>
         </h1>
         <button onClick={() => console.log("toggle dark mode")}>
           dark mode
@@ -222,32 +342,19 @@ export default function CatalogLayout({ children, catalogItems }) {
         </ul>
         <nav>
           <ul style={{ display: "flex", listStyle: "none" }}>
-            {Object.keys(CatalogueCategory).map((currentCategory) => {
+            {/* {Object.keys(CatalogueCategory).map((currentCategory) => {
               return (
                 <li key={currentCategory}>
-                    <Link 
-                      href="/[...category]"
-                      as={`/${currentCategory}/blah`}> 
-                      {currentCategory}
-                    </Link>
+                  <Link href="/[...category]" as={`/${currentCategory}/blah`}>
+                    {currentCategory}
+                  </Link>
                 </li>
               );
-            })}
+            })} */}
           </ul>
 
-          <ul style={{ display: "flex", listStyle: "none" }}>
-            {CATEGORY_TREE[category[0]].map((subcategory) => {
-              return (
-                <li key={subcategory}>
-                    <Link 
-                      href="/[...category]"
-                      as={`/${category[0]}/${subcategory}`}>
-                      blah
-                      
-                    </Link>
-                </li>
-              );
-            })}
+          <ul style={{ listStyle: "none" }}>
+            <Tabs categoryPath={category} />
           </ul>
 
           {/* TODO Add navlinks for final layer of nested categories ex. accessories */}
@@ -300,10 +407,11 @@ export default function CatalogLayout({ children, catalogItems }) {
       <main>
         <article>
           <h2>
-            {category[0]} Catalog - {category[category.length-1]} Items
+            {categories[0]} Catalog - {categories[categories.length - 1]} Items
           </h2>
           <div style={{ display: "flex" }}>
-            {selectedCatalogItems.map((catalogItem) => {
+            {items.map((catalogItem) => {
+              console.log({ catalogItem });
               return (
                 <section
                   key={catalogItem.id}
@@ -318,9 +426,9 @@ export default function CatalogLayout({ children, catalogItems }) {
                 >
                   <button onClick={() => console.log("redirect to item page")}>
                     <Link
-                      href={`/${category[0]}/${category[category.length-1]}/${
-                        catalogItem.id
-                      }`}
+                      href={`/${categories[0]}-${
+                        categories[categories.length - 1]
+                      }/${catalogItem.id}`}
                     >
                       {catalogItem.name}
                     </Link>
@@ -342,7 +450,9 @@ export default function CatalogLayout({ children, catalogItems }) {
             })}
           </div>
 
-          <CatalogItemPopup catalogItem={sortedCatalogItems[0]} />
+          {sortedCatalogItems.length && (
+            <CatalogItemPopup catalogItem={sortedCatalogItems[0]} />
+          )}
         </article>
 
         <FilterPopup filters={filters} setFilters={setFilters} />
@@ -399,7 +509,7 @@ function CatalogItemPopup({ catalogItem }) {
       <h4>Obtain Method</h4>
       TBA
       <h4>Gallery</h4>
-      {catalogItem.gallery.map((image) => {
+      {catalogItem.gallery?.map((image) => {
         return (
           <Image
             key={image.src}

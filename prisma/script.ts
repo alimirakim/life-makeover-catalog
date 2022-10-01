@@ -5,9 +5,10 @@ const prisma = new PrismaClient();
 async function main() {
   // ... you will write your Prisma Client queries here
 
-  // await prisma.set.deleteMany();
+  await prisma.set.deleteMany();
+  await prisma.item.deleteMany();
 
-  if (false) {
+  if (true) {
     const set = await prisma.set.create({
       data: {
         id: "set__sleepy_bunny",
