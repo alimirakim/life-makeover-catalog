@@ -16,68 +16,77 @@ export type PaletteNumber =
   | 15
   | 16;
 
-export enum StyleRating {
-  "SSS",
-  "SS",
-  "S",
-  "A",
-  "B",
-  "C",
-}
+export type PaletteColorNumber = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+export type Palette = [PaletteNumber, PaletteColorNumber];
 
+export type StarRank = 3 | 4 | 5 | 6;
+export enum StyleRank {
+  sss = "sss",
+  ss = "ss",
+  s = "s",
+  a = "a",
+  b = "b",
+  c = "c",
+}
 export enum Style {
-  "Elegant",
-  "Lively",
-  "Cool",
-  "Sweet",
-  "Fresh",
-  "Warm",
-  "Sexy",
-  "Pure",
-  "Gorgeous",
-  "Simple",
+  elegant = "elegant",
+  lively = "lively",
+  cool = "cool",
+  sweet = "sweet",
+  fresh = "fresh",
+  warm = "warm",
+  sexy = "sexy",
+  pure = "pure",
+  gorgeous = "gorgeous",
+  simple = "simple",
 }
 
 export enum Tag {
-  "Classic",
-  "Traditional",
-  "Japanese",
-  "Gown",
-  "Lolita",
-  "Street",
-  "Girl Group",
-  "Fairytale",
-  "Gothic",
-  "Street Punk",
-  "Elfish",
-  "Homey",
-  "British",
-  "Sporty",
-  "Swimsuit",
-  "Rain Gear",
-  "Sunproof",
-  "Bath",
-  "Wedding",
-  "Retro",
-  "Unisex",
-  "Animal",
-  "Uniform",
-  "Preppy",
-  "Mori",
-  "Cyberpunk",
-  "Formal",
-  "Dancer",
-  "Rock&Roll",
-  "Pastoral",
-  "Hot Girl",
-  "Winter",
-  "Dungarees",
-  "Ladylike",
-  "Holiday",
-  "Princess",
-  "Cool",
-  "Egyptian",
+  classic = "classic",
+  traditional = "traditional",
+  japanese = "japanese",
+  gown = "gown",
+  lolita = "lolita",
+  street = "street",
+  girl_group = "girl_group",
+  fairytale = "fairytale",
+  gothic = "gothic",
+  street_punk = "street_punk",
+  elfish = "elfish",
+  homey = "homey",
+  british = "british",
+  sporty = "sporty",
+  swimsuit = "swimsuit",
+  rain_gear = "rain_gear",
+  sunproof = "sunproof",
+  bath = "bath",
+  wedding = "wedding",
+  retro = "retro",
+  unisex = "unisex",
+  animal = "animal",
+  uniform = "uniform",
+  preppy = "preppy",
+  mori = "mori",
+  cyberpunk = "cyberpunk",
+  formal = "formal",
+  dancer = "dancer",
+  rock_and_roll = "rock_and_roll",
+  pastoral = "pastoral",
+  hot_girl = "hot_girl",
+  winter = "winter",
+  dungarees = "dungarees",
+  ladylike = "ladylike",
+  holiday = "holiday",
+  princess = "princess",
+  cool = "cool",
+  egyptian = "egyptian",
 }
+
+export type Brand =
+  | "amber_shimmer"
+  | "offshore_fireworks"
+  | "evening_star"
+  | "voice_and_color";
 
 export enum CatalogueCategory {
   fashion = "fashion",
@@ -130,3 +139,5 @@ export enum MakeupCategory {
   blush = "blush",
   facepaint = "facepaint",
 }
+
+export type ItemCategory = FashionCategory | AccessoryCategory | MakeupCategory;

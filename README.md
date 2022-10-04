@@ -156,13 +156,15 @@ P3s? Unsure?:
 - NOW:
   [x] Create GitHub repo
   [x] Deploy to Vercel
-  [/] Add libraries and links to docs
-  [] Finish building navigation and skeleton pages
+  [x] Add libraries and links to docs
+  [x] Finish building navigation
+  [/] Add mock data including images (1 user, 1-3 items per category)
+  [] Create user accounts with firebase
+  [] Create reducers
+
   [] Clean file structure and organization
   [] Add scss stylesheets
   [] Add Storybook
-  [] Add mock data including images (1 user, 1-3 items per category)
-  [] Create reducers
 
 - NEXT:
 
@@ -172,7 +174,6 @@ P3s? Unsure?:
   - Create basic eng guidelines for self
   - Add tests for existing code
   - Use TDD to sketch out more utilities
-  - Create user accounts with firebase
 
   - Hook everything together
   - Solidify contracts
