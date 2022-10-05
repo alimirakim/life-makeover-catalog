@@ -59,7 +59,8 @@ export interface Set {
     | "brand__please_yourself";
   starRank: StarRank;
   obtainType: ObtainType;
-  itemIds: string[];
+  itemIds?: string[];
+  items?: { create: Item[] };
   mainStyle?: Style;
 }
 
@@ -228,7 +229,7 @@ interface ObtainMethodBeautyCourse {
 interface ObtainMethodCraft {
   obtainType: ObtainType.craft;
   craftCategory?: "storyQuest" | "mindTravel" | "other";
-  materialCosts?: { itemId: string; quantity: number }[];
+  materialCost?: { itemId: string; quantity: number }[];
 }
 
 interface BeautyCourse {

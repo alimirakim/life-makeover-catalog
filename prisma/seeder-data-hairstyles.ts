@@ -437,20 +437,6 @@ const hairstyles: Item[] = [
     ],
   },
   {
-    id: "fashion__hairstyle__sakura_fever",
-    name: "Sakura Fever",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.sweet,
-    tag1: Tag.retro,
-    obtainMethods: [
-      {
-        obtainType: ObtainType.event,
-        eventId: "event__sack_of_foxes",
-      },
-    ],
-  },
-  {
     id: "fashion__hairstyle__lucid_moments",
     name: "Lucid Moments",
     starRank: 5,
@@ -461,36 +447,6 @@ const hairstyles: Item[] = [
       {
         obtainType: ObtainType.lightchase,
         lightchaseId: "lightchase__nirvana",
-      },
-    ],
-  },
-  {
-    id: "fashion__hairstyle__sun_and_seagull",
-    name: "Sun & Seagull",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.simple,
-    tag1: Tag.lolita,
-    tag2: Tag.fairytale,
-    obtainMethods: [
-      {
-        obtainType: ObtainType.lightchase,
-        lightchaseId: "lightchase__essence",
-      },
-    ],
-  },
-  {
-    id: "fashion__hairstyle__cinnamon_cutie",
-    name: "Cinnamon Cutie",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.pure,
-    tag1: Tag.lolita,
-    tag2: Tag.fairytale,
-    obtainMethods: [
-      {
-        obtainType: ObtainType.event,
-        eventId: "event__greedy_bear",
       },
     ],
   },
@@ -636,34 +592,6 @@ const hairstyles: Item[] = [
     //   ]
   },
   {
-    id: "fashion__hairstyle__island_spirit",
-    name: "Island Spirit",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.pure,
-    // tag1: Tag.,
-    // tag2: Tag.,
-    // obtainMethods: [
-    //   {
-    //   obtainType: ObtainType. ,
-    //   },
-    // ]
-  },
-  {
-    id: "fashion__hairstyle__naughty_witch",
-    name: "Naughty Witch",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.gorgeous,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
-  },
-  {
     id: "fashion__hairstyle__eternal_flower",
     name: "Eternal Flower",
     starRank: 5,
@@ -725,20 +653,6 @@ const hairstyles: Item[] = [
     starRank: 5,
     category: FashionCategory.hairstyle,
     mainStyle: Style.pure,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
-  },
-  {
-    id: "fashion__hairstyle__frolic_and_stroll",
-    name: "Frolic and Stroll",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.sweet,
     //   tag1: Tag.,
     //   tag2: Tag.,
     //   obtainMethods: [
@@ -846,20 +760,6 @@ const hairstyles: Item[] = [
     //   ]
   },
   {
-    id: "fashion__hairstyle__prayer_of_stars",
-    name: "Prayer of Stars",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.elegant,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
-  },
-  {
     id: "fashion__hairstyle__love_song",
     name: "Love Song",
     starRank: 5,
@@ -907,20 +807,6 @@ const hairstyles: Item[] = [
     starRank: 5,
     category: FashionCategory.hairstyle,
     mainStyle: Style.cool,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
-  },
-  {
-    id: "fashion__hairstyle__dream_concerto",
-    name: "Dream Concerto",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.simple,
     //   tag1: Tag.,
     //   tag2: Tag.,
     //   obtainMethods: [
@@ -1056,20 +942,6 @@ const hairstyles: Item[] = [
     //   ]
   },
   {
-    id: "fashion__hairstyle__golden_sugar",
-    name: "Golden Sugar",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.sweet,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
-  },
-  {
     id: "fashion__hairstyle__teary_poem",
     name: "Teary Poem",
     starRank: 5,
@@ -1089,20 +961,6 @@ const hairstyles: Item[] = [
     starRank: 5,
     category: FashionCategory.hairstyle,
     mainStyle: Style.sexy,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
-  },
-  {
-    id: "fashion__hairstyle__snow_like_flowers",
-    name: "Snow-Like Flowers",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.sweet,
     //   tag1: Tag.,
     //   tag2: Tag.,
     //   obtainMethods: [
