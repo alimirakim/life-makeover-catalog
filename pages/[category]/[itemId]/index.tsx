@@ -6,7 +6,7 @@ import startCase from "lodash/startCase";
 import prisma from "../../../prisma/prisma";
 import getNestedCategoryPath from "../../../utils/getNestedCategoryPath";
 import { FashionCategory } from "../../../types/types";
-import HeaderBar from "../../../components/HeaderBar/HeaderBar";
+import PageHeader from "../../../components/PageHeader";
 
 export async function getServerSideProps({ params }) {
   const itemId = params.itemId;
@@ -60,7 +60,7 @@ export default function ItemPage({ item }) {
       </Head>
 
       <header>
-        <HeaderBar
+        <PageHeader
           title={`${item.name} [${isSet ? "Set" : item.category}] ${getStars(
             item.starRank
           )}`}

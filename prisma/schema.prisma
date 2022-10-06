@@ -17,7 +17,7 @@ datasource db {
 //   guild           String           
 //   createdAt       DateTime         @default(now())
 //   updatedAt       DateTime         @updatedAt
-  // characterImages CharacterImage[]
+// characterImages CharacterImage[]
 // }
 
 // model CharacterImage {
@@ -34,31 +34,25 @@ datasource db {
 //   region     String
 // }
 
-
-
 model Item {
-  id                 String            @id
-  starRank           Int
-  name               String 
-  description        String?
-  category           String 
-  tag1               String?
-  tag2               String?
-  styleRatings       String?
-  obtainType         String
-  obtainMethod       String
-  // accessAlly         Ally?
+  id            String  @id
+  starRank      Int
+  name          String
+  description   String?
+  category      String
+  tag1          String?
+  tag2          String?
+  styleRanks    String?
+  obtainMethods String
   // releaseDate        DateTime
-  setId              String?
-  set                Set?              @relation(fields: [setId], references: [id])
+  setId         String?
+  set           Set?    @relation(fields: [setId], references: [id])
   // MakeupCollection   MakeupCollection? @relation(fields: [makeupCollectionId], references: [id])
   // makeupCollectionId String?
 }
 
-
-
 model Set {
-  id         String     @id
+  id         String  @id
   name       String
   starRank   Int
   brand      String?
@@ -77,7 +71,6 @@ model Set {
 //   evolutionItem   Item     @relation(fields: [evolutionItemId], references: [id])
 //   triggerSkill    String // Maybe JSON?
 // }
-
 
 // model MakeupCollection {
 //   id           String     @id
@@ -138,7 +131,6 @@ model Set {
 // enum Style {
 //   Cool
 // }
-
 
 // enum AllyRank {
 //   SSR

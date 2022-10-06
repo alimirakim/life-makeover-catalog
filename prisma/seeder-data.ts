@@ -552,6 +552,7 @@ const sets: Set[] = [
 const fluffy_items = {
   items: {
     create: [
+      {},
       {
         id: "fashion__dress__sleepy_bunny",
         starRank: 4,

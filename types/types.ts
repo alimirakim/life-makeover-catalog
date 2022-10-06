@@ -83,10 +83,10 @@ export enum Tag {
 }
 
 export type Brand =
-  | "amber_shimmer"
-  | "offshore_fireworks"
-  | "evening_star"
-  | "voice_and_color";
+  | "brand__amber_shimmer"
+  | "brand__offshore_fireworks"
+  | "brand__evening_star"
+  | "brand__voice_and_color";
 
 export enum CatalogueCategory {
   fashion = "fashion",
@@ -115,13 +115,13 @@ export enum AccessoryCategory {
   face = "face",
   earrings = "earrings",
   necklace = "necklace",
-  bracelet = "bracelet",
+  wrist = "wrist",
   gloves = "gloves",
   ring = "ring",
   handheld = "handheld",
   wings = "wings",
   tail = "tail",
-  bag = "bag",
+  back = "back",
   anklet = "anklet",
   crossbody = "crossbody",
   floating = "floating",
@@ -130,14 +130,14 @@ export enum AccessoryCategory {
 
 export enum MakeupCategory {
   collection = "collection",
-  eyebrows = "eyebrows",
+  eyebrow = "eyebrow",
   contacts = "contacts",
   eyeliner = "eyeliner",
   eyeshadow = "eyeshadow",
   lipstick = "lipstick",
   eyelashes = "eyelashes",
   blush = "blush",
-  facepaint = "facepaint",
+  facial_paint = "facial_paint",
 }
 
 export type ItemCategory = FashionCategory | AccessoryCategory | MakeupCategory;

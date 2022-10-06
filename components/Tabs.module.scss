@@ -1,0 +1,18 @@
+.tabs {
+    display: flex;
+    gap: 0.2rem;
+    list-style: none;
+    margin-top: 0.5rem;
+    border-bottom: 1px solid gray;
+
+    li {
+        padding: 0.3rem 0.6rem;
+        border-radius: 0.5rem 0.5rem 0 0;
+        background-color: aquamarine;
+
+        &:hover {
+            color: blue;
+            background-color: aqua;
+        }
+    }
+}

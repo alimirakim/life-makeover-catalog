@@ -15,29 +15,19 @@ import {
 } from "../../types/types";
 import getNestedCategoryPath from "../../utils/getNestedCategoryPath";
 import { CATEGORY_TREE } from "../../constants";
-import HeaderBar from "../../components/HeaderBar/HeaderBar";
-
-enum SortType {
-  Latest = "Latest",
-  Alphabetical = "Alphabetical",
-  StarRank = "Star Rank",
-  Obtained = "Obtained",
-  LikeRating = "Like Rating",
-  Popularity = "Popularity",
-}
-
-enum ViewMode {
-  Tiles = "Tiles",
-  Posters = "Posters",
-  List = "List",
-}
+import PageHeader from "../../components/PageHeader";
+import ItemThumbnail from "../../components/ItemThumbnail";
+import ItemPreview from "../../components/ItemPreview";
+import Tabs from "../../components/Tabs";
+import PageFooter from "../../components/PageFooter";
+import { Item } from "../../types/interfaces";
 
 export async function getServerSideProps({ params }) {
   const categories = params.category.split("-");
   const category = categories[categories.length - 1];
 
   const items =
-    category === FashionCategory.Set
+    category === FashionCategory.set
       ? await prisma.set.findMany()
       : await prisma.item.findMany({
           where: {
@@ -132,63 +122,18 @@ export async function maybeGetStaticPaths() {
   };
 }
 
-interface TabsProps {
-  categoryPath: string;
-}
-
-function Tabs({ categoryPath }: TabsProps) {
-  return (
-    <>
-      <div>
-        {Object.values(CatalogueCategory).map((category) => {
-          return <Link href={getNestedCategoryPath(category)}>{category}</Link>;
-        })}
-      </div>
-      <div>
-        {categoryPath.split("-").map((category) => {
-          return (
-            <div>
-              <hr />
-              {CATEGORY_TREE[category]?.map((subcategory) => {
-                return (
-                  <>
-                    <Link href={getNestedCategoryPath(subcategory)}>
-                      {subcategory}
-                    </Link>
-                  </>
-                );
-              })}
-            </div>
-          );
-        })}
-      </div>
-    </>
-  );
-}
-
-function Tab({ label, path }) {
-  // console.log({ label, categoryPath });
-  return (
-    <li>
-      <Link href={path}>{label}</Link>
-    </li>
-  );
-}
-
 //
-export default function CatalogLayout({ children, sets, items }) {
+export default function CatalogPage({ children, sets, items }) {
   const router = useRouter();
   const { category } = router.query;
   const categories = category ? category.split("-") : [];
+  const catalogHeadingLabel = `${categories[0]} Catalog - ${
+    categories[categories.length - 1]
+  } Items`;
 
-  const [selectedSort, setSelectedSort] = useState(SortType.Latest);
-  const [viewMode, setViewMode] = useState("tiles"); // tiles, posters, list
-  const [isReverseSort, setIsReverseSort] = useState(false);
-  const [filters, setFilters] = useState([]);
-
-  const sortedCatalogItems = useMemo(() => {
-    return sortCatalog(selectedSort, items);
-  }, [selectedSort, items]);
+  // const sortedCatalogItems = useMemo(() => {
+  //   return sortCatalog(selectedSort, items);
+  // }, [selectedSort, items]);
 
   return (
     <>
@@ -196,299 +141,49 @@ export default function CatalogLayout({ children, sets, items }) {
         <title>Life Makeover Catalog</title>
       </Head>
 
-      <header>
-        <HeaderBar title={category} />
-
-        <ul style={{ listStyle: "none" }}>
-          <Tabs categoryPath={category} />
-        </ul>
-
-        {/* TODO Add navlinks for final layer of nested categories ex. accessories */}
-
-        <hr />
-
-        <div>
-          View mode:
-          {Object.values(ViewMode).map((viewMode) => {
-            return (
-              <button key={viewMode} onClick={() => setViewMode(viewMode)}>
-                {viewMode}
-              </button>
-            );
-          })}
-        </div>
-
-        <div>
-          Filter by:{" "}
-          {filters.map((filter) => (
-            <div key={filter}>
-              {filter}{" "}
-              <button onClick={() => console.log("remove filter")}>X</button>
-            </div>
-          ))}
-          <button onClick={() => console.log("open filter popup")}>+</button>
-        </div>
-        <div>
-          <button onClick={() => setIsReverseSort(!isReverseSort)}>
-            {isReverseSort ? "Desc" : "Asc"}
-          </button>{" "}
-          Sort by:{" "}
-          {Object.values(SortType).map((sortBy) => {
-            return (
-              <button
-                key={sortBy}
-                onClick={() => setSelectedSort(sortBy)}
-                className={sortBy === selectedSort && "selected"}
-              >
-                {sortBy}
-              </button>
-            );
-          })}
-        </div>
-
-        <hr />
-      </header>
+      <PageHeader categories={categories}>
+        <Tabs categories={categories} />
+      </PageHeader>
 
       <main>
         <article>
-          <h2>
-            {categories[0]} Catalog - {categories[categories.length - 1]} Items
-          </h2>
-          <div style={{ display: "flex" }}>
+          <h2>{catalogHeadingLabel}</h2>
+
+          <ul style={{ display: "flex" }}>
             {items.length
-              ? items.map((catalogItem) => {
+              ? items.map((catalogItem: Item) => {
                   return (
-                    <section
-                      key={catalogItem.id}
-                      style={{
-                        border: "1px dashed pink",
-                        borderRadius: 16,
-                        margin: 8,
-                        width: "max-content",
-                        padding: 8,
-                        backgroundColor: "lightyellow",
-                      }}
-                    >
-                      <button
-                        onClick={() => console.log("redirect to item page")}
-                      >
-                        <Link
-                          href={`/${categories[0]}-${
-                            categories[categories.length - 1]
-                          }/${catalogItem.id}`}
-                        >
-                          {catalogItem.name}
-                        </Link>
-                      </button>
-
-                      <Image
-                        src={`/images/${catalogItem.id}`}
-                        height={100}
-                        width={100}
-                        alt="item icon or preview image"
+                    <li key={catalogItem.id}>
+                      <ItemThumbnail
+                        catalogItem={catalogItem}
+                        categories={categories}
                       />
-                      <hr />
-
-                      <ObtainedButton />
-                      <WishlistButton />
-                      <HeartMeter />
-                    </section>
+                    </li>
                   );
                 })
               : "There are no items matching this category"}
-          </div>
+          </ul>
 
-          {sortedCatalogItems.length ? (
-            <CatalogItemPopup catalogItem={sortedCatalogItems[0]} />
-          ) : (
-            ""
-          )}
+          {/* TODO Turn into popup that shows on thumb hover */}
+          {/* {items.length > 0 && <ItemPreview catalogItem={items[0]} />} */}
         </article>
 
-        <FilterPopup filters={filters} setFilters={setFilters} />
+        {/* <FilterPopup filters={filters} setFilters={setFilters} /> */}
       </main>
 
-      <footer>
-        Made by alimirakim.
-        <nav>
-          <button>Go to top</button>
-          <button>Contact me</button>
-          <button>GitHub</button>
-          <button>About & FAQ</button>
-        </nav>
-      </footer>
+      <PageFooter />
     </>
   );
 }
 
-/**
- * Maybe have this be embed?
- * @param param0
- * @returns
- */
-function CatalogItemPopup({ catalogItem }) {
-  return (
-    <aside
-      style={{
-        border: "1px dashed pink",
-        borderRadius: 16,
-        margin: 8,
-        width: "max-content",
-        padding: 8,
-        backgroundColor: "lightblue",
-      }}
-    >
-      <h3>{catalogItem.name}</h3>
-      <Link href={`/items/${catalogItem.id}`}>{`See full page ->`}</Link>
-      <button onClick={() => console.log("edit mode")}>Edit</button>
-      <small>{catalogItem.starRank} stars</small>
-      <p>{catalogItem.description}</p>
-      <form>
-        <ObtainedButton />
-        <WishlistButton />
-        <HeartMeter />
-        <PaletteButtons />
-      </form>
-      <Image
-        src={`/images/${catalogItem.id}`}
-        height={100}
-        width={100}
-        alt="item preview image"
-      />
-      <hr />
-      <h3>Obtain Method</h3>
-      TBA
-      <h4>Gallery</h4>
-      {catalogItem.gallery?.map((image) => {
-        return (
-          <Image
-            key={image.src}
-            src={`/images/${image.src}`}
-            height={100}
-            width={200}
-            alt={`Model ${image.model} wearing ${catalogItem.name}, courtesy of ${image.owner}`}
-          />
-        );
-      })}
-    </aside>
-  );
-}
+// function sortCatalog(sortType, catalogItems) {
+//   switch (sortType) {
+//     case SortType.Alphabetical:
+//       return catalogItems.sort();
 
-function ObtainedButton() {
-  const isObtained = false;
-  const setIsObtained = (isObtained) => true;
+//     // TODO other sorts
 
-  return (
-    <button onClick={() => setIsObtained(!isObtained)}>
-      {isObtained ? "Obtained" : "Unobtained"}
-    </button>
-  );
-}
-
-function WishlistButton() {
-  const isWishlisted = true;
-  const setIsWishlisted = (isWishlisted) => false;
-
-  return (
-    <button onClick={() => setIsWishlisted(!isWishlisted)}>
-      {isWishlisted ? "Wishlisted" : "Add to wishlist"}
-    </button>
-  );
-}
-
-function HeartMeter() {
-  const popularityLevel = 5;
-  const userHeartLevel = 3;
-  const setUserHeartRating = (heartValue) => heartValue;
-
-  const getHandleClick = (heartValue) => () => {
-    console.log("like");
-    setUserHeartRating(heartValue);
-  };
-
-  return (
-    <div>
-      <button onClick={getHandleClick(1)}>{`<3`}</button>
-      <button onClick={getHandleClick(2)}>{`<3`}</button>
-      <button onClick={getHandleClick(3)}>{`<3`}</button>
-      <button onClick={getHandleClick(4)}>{`<3`}</button>
-      <button onClick={getHandleClick(5)}>{`<3`}</button>
-    </div>
-  );
-}
-
-const palettesMock = [
-  { mainColor: "#a00", isObtained: true, isWishlisted: false },
-  { mainColor: "#00a", isObtained: true, isWishlisted: true },
-  { mainColor: "#0a0", isObtained: false, isWishlisted: false },
-];
-function PaletteButtons() {
-  const isUnlocked = true;
-  const palettes = palettesMock;
-
-  return (
-    <div style={{ display: "flex" }}>
-      {palettes.map((palette, i) => {
-        return (
-          <section key={i}>
-            <div style={{ backgroundColor: palette.mainColor, width: 50 }}>
-              color swatch
-            </div>
-            <ObtainedButton />
-            <WishlistButton />
-          </section>
-        );
-      })}
-    </div>
-  );
-}
-
-function FilterPopup(filters, setFilters) {
-  const filterCategories = {
-    obtainStatus: ["obtained", "unobtained"],
-    wishlist: ["wishlisted", "not wishlisted"],
-    like: [5, 4, 3, 2, 1, 0],
-    popularity: [5, 4, 3, 2, 1, 0],
-    starRank: [6, 4, 3, 2],
-    style: Object.values(Style),
-    tag: Object.values(Tag),
-    pavilion: ["nirvana", "snow stuff"],
-    brand: ["shimmer", "f"],
-    obtainType: ["craft", "lightchase"],
-  };
-
-  return (
-    <form>
-      <h2>Filter by:</h2>
-      {Object.keys(filterCategories).map((filterCategory) => {
-        return (
-          <fieldset key={filterCategory}>
-            <legend>{filterCategory}</legend>
-            {filterCategories[filterCategory].map((filterOption) => {
-              return (
-                <button
-                  key={filterOption}
-                  onClick={() => console.log("add/remove filter")}
-                >
-                  {filterOption}
-                </button>
-              );
-            })}
-          </fieldset>
-        );
-      })}
-    </form>
-  );
-}
-
-function sortCatalog(sortType, catalogItems) {
-  switch (sortType) {
-    case SortType.Alphabetical:
-      return catalogItems.sort();
-
-    // TODO other sorts
-
-    default:
-      return catalogItems;
-  }
-}
+//     default:
+//       return catalogItems;
+//   }
+// }

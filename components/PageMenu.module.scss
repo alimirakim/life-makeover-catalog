@@ -1,0 +1,13 @@
+.container {
+    position: absolute;
+    margin: 0 0.5rem;
+    width: max-content;
+    border-radius: 0.5rem;
+    background-color: white;
+    padding: 0.5rem;
+    box-shadow: 2px 2px 5px black;
+
+    .menuOptions {
+        line-height: 1.5rem;
+    }
+}

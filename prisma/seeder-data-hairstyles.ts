@@ -932,41 +932,36 @@ const hairstyles: Item[] = [
     name: "Magnificent Dream",
     starRank: 5,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.sexy,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
-  },
-  {
-    id: "fashion__hairstyle__teary_poem",
-    name: "Teary Poem",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.cool,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
-  },
-  {
-    id: "fashion__hairstyle__blooms_in_vale",
-    name: "Blooms In Vale",
-    starRank: 5,
-    category: FashionCategory.hairstyle,
-    mainStyle: Style.sexy,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
+    tag1: Tag.classic,
+    tag2: Tag.gown,
+    styleRanks: {
+      sexy: StyleRank.sss,
+      gorgeous: StyleRank.s,
+      sweet: StyleRank.s,
+      elegant: StyleRank.s,
+      warm: StyleRank.a,
+    },
+    obtainMethods: [{ obtainType: ObtainType.lightchaseBeloved }],
   },
 ];
+
+const sample = {
+  name: "",
+  starRank: 5,
+  //   category: MakeupCategory.,
+  obtainMethods: [
+    {
+      obtainType: ObtainType.craftMindTravel,
+      // materialCost: [
+      //     {
+      //     itemId: "fashion__",
+      //     quantity: ,
+      //     },
+      //     {
+      //     itemId: "fashion__",
+      //     quantity: ,
+      //     },
+      // ],
+    },
+  ],
+};
