@@ -159,6 +159,8 @@ export enum ObtainType {
   event,
   stage,
   exchange,
+  exchangeGuildShop,
+  exchangeDecomStore,
   exchangeFashionShop,
   exchangeAllyShop,
   exchangeEndorsementShop,
@@ -171,6 +173,8 @@ export enum ObtainType {
   reward, // goals, chapter packs, ally evolution, etc...
   rewardLevel,
   beautycourse,
+  giftExhibition,
+  giftAllies,
   rebateGift,
   fashionCode,
 }

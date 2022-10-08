@@ -9,7 +9,7 @@ export default function Home() {
     <main>
       Go to{" "}
       <Link
-        href="/[category]"
+        href="/[categoryPath]"
         as={getNestedCategoryPath(DEFAULT_SUPERCATEGORY)}
       >
         catalog

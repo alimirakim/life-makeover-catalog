@@ -1,11 +1,16 @@
 import Link from "next/link";
 
+import styles from "./PageFooter.module.scss";
+
 export default function PageFooter() {
   return (
-    <footer>
+    <footer className={styles.container}>
+      <hr />
+
       <p>
         <small>Made by alimirakim.</small>
       </p>
+
       <nav>
         <ul>
           <li>

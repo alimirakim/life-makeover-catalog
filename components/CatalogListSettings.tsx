@@ -18,9 +18,11 @@ enum SortType {
 export default function CatalogListSettings() {
   return (
     <nav>
-      <ViewModeSettings />
+      <hr />
+      {/* <ViewModeSettings /> */}
       <SortSettings />
       <FilterList />
+      <hr />
     </nav>
   );
 }

@@ -5,6 +5,9 @@ import HeartMeter from "./HeartMeter";
 import ObtainedButton from "./ObtainedButton";
 import WishlistButton from "./WishlistButton";
 
+import styles from "./ItemThumbnail.module.scss";
+import LockButton from "./LockButton";
+
 interface ItemThumbnailProps {
   catalogItem: Item;
   categories: string[];
@@ -14,40 +17,31 @@ export default function ItemThumbnail({
   catalogItem,
   categories,
 }: ItemThumbnailProps) {
-  return (
-    <section
-      style={{
-        border: "1px dashed pink",
-        borderRadius: 16,
-        margin: 8,
-        width: "max-content",
-        padding: 8,
-        backgroundColor: "lightyellow",
-      }}
-    >
-      <button onClick={() => console.log("redirect to item page")}>
-        <Link
-          href={`/${categories[0]}-${categories[categories.length - 1]}/${
-            catalogItem.id
-          }`}
-        >
-          {catalogItem.name}
-        </Link>
-      </button>
-      {console.log({
-        img: `/images/thumbnail__${catalogItem.id}.jpg`,
-      })}
-      <Image
-        src={`/images/thumbnail__${catalogItem.id}.jpg`}
-        height={100}
-        width={100}
-        alt="item icon or preview image"
-      />
-      <hr />
+  const itemPageUrl = `/${categories[0]}-${categories[categories.length - 1]}/${
+    catalogItem.id
+  }`;
 
-      <ObtainedButton />
-      <WishlistButton />
+  return (
+    <article className={styles.container}>
+      <div className={styles.buttons}>
+        <ObtainedButton />
+        <LockButton />
+        <WishlistButton />
+      </div>
       <HeartMeter />
-    </section>
+      <Link href={itemPageUrl}>
+        <div>
+          <Image
+            src={`/images/preview__${catalogItem.id}.jpg`}
+            width={200}
+            height={300}
+            alt={`${catalogItem.category} item "${catalogItem.name}"`}
+            title={`${catalogItem.category} item - ${catalogItem.name}`}
+            className={styles.image}
+          />
+          <h3 className={styles.title}>{catalogItem.name}</h3>
+        </div>
+      </Link>
+    </article>
   );
 }

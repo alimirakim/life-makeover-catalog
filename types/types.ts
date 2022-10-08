@@ -82,22 +82,22 @@ export enum Tag {
   egyptian = "egyptian",
 }
 
-export type Brand =
-  | "brand__amber_shimmer"
-  | "brand__offshore_fireworks"
-  | "brand__evening_star"
-  | "brand__voice_and_color";
-
 export enum CatalogueCategory {
+  set = "set",
   fashion = "fashion",
-  makeup = "makeup",
   allies = "allies",
   photo = "photo",
   home = "home",
 }
 
+export enum BrandCategory {
+  amber_shimmer = "amber_shimmer",
+  offshore_fireworks = "offshore_fireworks",
+  evening_star = "evening_star",
+  voice_and_color = "voice_and_color",
+}
+
 export enum FashionCategory {
-  set = "set",
   hairstyle = "hairstyle",
   dress = "dress",
   coat = "coat",

@@ -1,5 +1,6 @@
 import {
   AccessoryCategory,
+  BrandCategory,
   CatalogueCategory,
   FashionCategory,
   MakeupCategory,
@@ -7,10 +8,10 @@ import {
 import getLinkedCategoryMap from "./utils/getLinkedCategoryMap";
 
 export const CATEGORY_TREE = {
+  [CatalogueCategory.set]: Object.values(BrandCategory),
   [CatalogueCategory.fashion]: Object.values(FashionCategory),
   [FashionCategory.accessory]: Object.values(AccessoryCategory),
-  [CatalogueCategory.makeup]: Object.values(MakeupCategory),
-  [CatalogueCategory.allies]: ["all", "ssr", "sr", "r"],
+  [CatalogueCategory.allies]: ["ssr", "sr", "r"],
   [CatalogueCategory.photo]: [
     "pose",
     "scene",
@@ -27,7 +28,6 @@ export const CATEGORY_TREE = {
 export const LINKED_CATEGORY_MAP = getLinkedCategoryMap(CATEGORY_TREE);
 
 export const FASHION_CATEGORY_EMOJI = {
-  [FashionCategory.set]: "💃",
   [FashionCategory.hairstyle]: "💇‍♀️",
   [FashionCategory.dress]: "👗",
   [FashionCategory.coat]: "🧥",

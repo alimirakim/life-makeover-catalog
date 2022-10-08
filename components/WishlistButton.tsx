@@ -1,10 +1,12 @@
+import { useState } from "react";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+
 export default function WishlistButton() {
-  const isWishlisted = true;
-  const setIsWishlisted = (isWishlisted: boolean) => false;
+  const [isWishlisted, setIsWishlisted] = useState(false);
 
   return (
     <button onClick={() => setIsWishlisted(!isWishlisted)}>
-      {isWishlisted ? "Wishlisted" : "Add to wishlist"}
+      {isWishlisted ? <FaHeart /> : <FaRegHeart />}
     </button>
   );
 }

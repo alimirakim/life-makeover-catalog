@@ -1,6 +1,6 @@
 import { EventType, LightchaseType, Material } from "../types/enums";
 import { Event, Item, Lightchase, ObtainType, Set } from "../types/interfaces";
-import { FashionCategory, Style, Tag } from "../types/types";
+import { FashionCategory, MakeupCategory, Style, Tag } from "../types/types";
 
 const hairstyles: Item[] = [
   // {
@@ -167,7 +167,6 @@ const hairstyles: Item[] = [
     name: "Sweet Research",
     starRank: 4,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.pure,
     tag1: Tag.preppy,
     obtainMethods: [
       {
@@ -182,22 +181,23 @@ const hairstyles: Item[] = [
     name: "Layered Berries",
     starRank: 4,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.lively,
     tag1: Tag.pastoral,
     tag2: Tag.lolita,
-    obtainMethods: [
-      {
-        obtainType: ObtainType.reward,
-        rewardType: "levelReward",
-      },
-    ],
+    styleRanks: {
+        lively: StyleRank.s,
+        pure: StyleRank.a,
+        sweet: StyleRank.b,
+        gorgeous: StyleRank.b,
+        fresh: StyleRank.c,
+    },
+    obtainMethods: [{obtainType: ObtainType.rewardLevel}],
   },
+  
   {
     id: "fashion__hairstyle__nightcats_whisper",
     name: "Nightcat's Whisper",
     starRank: 4,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.sweet,
     tag1: Tag.preppy,
     obtainMethods: [
       {
@@ -368,13 +368,28 @@ const hairstyles: Item[] = [
     name: "Cocoon",
     starRank: 4,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.gorgeous,
     tag1: Tag.elfish,
     tag2: Tag.gown,
+    styleRanks: {
+        gorgeous: StyleRank.s,
+        cool: StyleRank.a,
+        elegant: StyleRank.b,
+        pure: StyleRank.b,
+        fresh: StyleRank.c,
+    },
     obtainMethods: [
       {
-        obtainType: ObtainType.craft,
-        craftCategory: "storyQuest",
+        obtainType: ObtainType.craftStoryQuest,
+            // materialCost: [
+      //     {
+      //     itemId: "fashion__",
+      //     quantity: ,
+      //     },
+      //     {
+      //     itemId: "fashion__",
+      //     quantity: ,
+      //     },
+      // ],
       },
     ],
   },
@@ -441,28 +456,30 @@ const hairstyles: Item[] = [
     name: "Lucid Moments",
     starRank: 5,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.sweet,
     tag1: Tag.street,
-    obtainMethods: [
-      {
-        obtainType: ObtainType.lightchase,
-        lightchaseId: "lightchase__nirvana",
-      },
-    ],
+    styleRanks: {
+        sweet: StyleRank.ss,
+            sexy: StyleRank.s,
+            simple: StyleRank.a,
+            lively: StyleRank.a,
+            fresh: StyleRank.b,
+    },
+    obtainMethods: [{obtainType: ObtainType.lightchaseNirvana}],
   },
   {
     id: "fashion__hairstyle__golden_goblet",
     name: "Golden Goblet",
     starRank: 5,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.gorgeous,
     tag1: Tag.dancer,
-    obtainMethods: [
-      {
-        obtainType: ObtainType.lightchase,
-        lightchaseId: "lightchase__nirvana",
-      },
-    ],
+    styleRanks: {
+        gorgeous: StyleRank.ss,
+        sexy: StyleRank.s,
+        sweet: StyleRank.a,
+        elegant: StyleRank.a,
+        fresh: StyleRank.b,
+    },
+    obtainMethods: [{obtainType: ObtainType.lightchaseNirvana}],
   },
   {
     id: "fashion__hairstyle__ceylon_short_song",
@@ -483,14 +500,15 @@ const hairstyles: Item[] = [
     name: "Light Of Menes",
     starRank: 5,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.gorgeous,
     tag1: Tag.egyptian,
-    obtainMethods: [
-      {
-        obtainType: ObtainType.lightchase,
-        lightchaseId: "lightchase__essence",
-      },
-    ],
+    styleRanks: {
+        gorgeous: StyleRank.ss,
+        sexy: StyleRank.s,
+        sweet: StyleRank.a,
+        elegant: StyleRank.a,
+        warm: StyleRank.b,
+    },
+    obtainMethods: [{obtainType: ObtainType.lightchaseEssence}],
   },
   {
     id: "fashion__hairstyle__busy_night",
@@ -539,14 +557,16 @@ const hairstyles: Item[] = [
     name: "Star Trace",
     starRank: 5,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.gorgeous,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
+      tag1: Tag.classic,
+      tag2: Tag.gown,
+      styleRanks: {
+        gorgeous: StyleRank.ss,
+        elegant: StyleRank.s,
+        sexy: StyleRank.a,
+        sweet: StyleRank.a,
+        fresh: StyleRank.b,
+      },
+      obtainMethods: [{obtainType: ObtainType.giftExhibition}],
   },
 
   {
@@ -568,28 +588,32 @@ const hairstyles: Item[] = [
     name: "Elegant Story",
     starRank: 5,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.sweet,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
+      tag1: Tag.lolita,
+      tag2: Tag.classic,
+      styleRanks: {
+        sweet: StyleRank.ss,
+        gorgeous: StyleRank.s,
+        elegant: StyleRank.a,
+        pure: StyleRank.a,
+        warm: StyleRank.b,
+      },
+      obtainMethods: [{obtainType: ObtainType.lightchaseBeloved}],
   },
   {
     id: "fashion__hairstyle__silver_star",
     name: "Silver Star",
     starRank: 5,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.lively,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
+      tag1: Tag.girl_group,
+      tag2: Tag.lolita,
+      styleRanks: {
+        lively: StyleRank.ss,
+            gorgeous: StyleRank.s,
+            cool: StyleRank.a,
+            sexy: StyleRank.a,
+            fresh: StyleRank.b,
+      },
+      obtainMethods: [{obtainType: ObtainType.lightchaseBeloved }],
   },
   {
     id: "fashion__hairstyle__eternal_flower",
@@ -610,14 +634,34 @@ const hairstyles: Item[] = [
     name: "Gentle Nocturne",
     starRank: 5,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.lively,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
+      tag1: Tag.street_punk,
+      tag2: Tag.fairytale,
+      styleRanks: {
+        lively: StyleRank.ss,
+        simple: StyleRank.s,
+        sweet: StyleRank.a,
+        sexy: StyleRank.a,
+        fresh: StyleRank.b,
+      },
+      obtainMethods: [
+        {
+        obtainType: ObtainType.craftMindTravel,
+        // materialCost: [
+        //     {
+        //         itemId: "fashion__",
+        //         quantity: ,
+        //     },
+        //     {
+        //         itemId: "fashion__",
+        //         quantity: ,
+        //     },
+        //     {
+        //         itemId: "fashion__",
+        //         quantity: ,
+        //     },
+        // ],
+        },
+      ]
   },
   {
     id: "fashion__hairstyle__sunshine_storm",
@@ -666,14 +710,21 @@ const hairstyles: Item[] = [
     name: "Grey Movement",
     starRank: 5,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.gorgeous,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
+      tag1: Tag.fairytale,
+      tag2: Tag.lolita,
+      styleRanks: {
+        gorgeous: StyleRank.ss,
+        sweet: StyleRank.s,
+        sexy: StyleRank.a,
+        elegant: StyleRank.a,
+        warm: StyleRank.b,
+      },
+      obtainMethods: [
+        {
+        obtainType: ObtainType.exchangeDecomStore,
+        cost: ,
+        },
+      ]
   },
   {
     id: "fashion__hairstyle__moon_dance",
@@ -778,14 +829,15 @@ const hairstyles: Item[] = [
     name: "Azure Skyline",
     starRank: 5,
     category: FashionCategory.hairstyle,
-    mainStyle: Style.gorgeous,
-    //   tag1: Tag.,
-    //   tag2: Tag.,
-    //   obtainMethods: [
-    //     {
-    //     obtainType: ObtainType. ,
-    //     },
-    //   ]
+      tag1: Tag.fairytale,
+      styleRanks: {
+        sexy: StyleRank.ss,
+        sweet: StyleRank.s,
+        lively: StyleRank.a,
+        pure: StyleRank.a,
+        fresh: StyleRank.b,
+      },
+      obtainMethods: [{obtainType: ObtainType.rebateGift}],
   },
   {
     id: "fashion__hairstyle__lost_sunlight",
@@ -943,16 +995,40 @@ const hairstyles: Item[] = [
     },
     obtainMethods: [{ obtainType: ObtainType.lightchaseBeloved }],
   },
+
+
+
 ];
+
+const scratch =   {
+    name: "",
+    starRank: 4,
+    category: MakeupCategory.blush,
+    obtainMethods: [{
+      obtainType: ObtainType.beautycourse,
+                beautyCourseId: "beautycourse__shining_star",
+                classNumber: 3,
+  }],
+  }
+  
 
 const sample = {
   name: "",
-  starRank: 5,
-  //   category: MakeupCategory.,
-  obtainMethods: [
-    {
-      obtainType: ObtainType.craftMindTravel,
-      // materialCost: [
+  starRank: 4,
+  category: ,
+  tag1: Tag. ,
+  tag2: Tag. ,
+  styleRanks: {
+    sexy: StyleRank.s,
+    gorgeous: StyleRank.a,
+    sweet: StyleRank.b,
+    elegant: StyleRank.b,
+    warm: StyleRank.c,
+  },
+  obtainMethods: [{obtainType: ObtainType. }],
+},
+
+    // materialCost: [
       //     {
       //     itemId: "fashion__",
       //     quantity: ,
@@ -962,6 +1038,3 @@ const sample = {
       //     quantity: ,
       //     },
       // ],
-    },
-  ],
-};

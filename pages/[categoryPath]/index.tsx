@@ -14,33 +14,60 @@ import {
   Tag,
 } from "../../types/types";
 import getNestedCategoryPath from "../../utils/getNestedCategoryPath";
-import { CATEGORY_TREE } from "../../constants";
+import { CATEGORY_TREE, LINKED_CATEGORY_MAP } from "../../constants";
 import PageHeader from "../../components/PageHeader";
 import ItemThumbnail from "../../components/ItemThumbnail";
 import ItemPreview from "../../components/ItemPreview";
 import Tabs from "../../components/Tabs";
 import PageFooter from "../../components/PageFooter";
 import { Item } from "../../types/interfaces";
+import CatalogListSettings from "../../components/CatalogListSettings";
 
 export async function getServerSideProps({ params }) {
-  const categories = params.category.split("-");
-  const category = categories[categories.length - 1];
+  const categories = params.categoryPath.split("-");
+  const supercategory = categories[0];
+  const lastCategory = categories[categories.length - 1];
 
-  const items =
-    category === FashionCategory.set
-      ? await prisma.set.findMany()
-      : await prisma.item.findMany({
-          where: {
-            category,
-          },
+  switch (supercategory) {
+    case CatalogueCategory.set:
+      let sets;
+      if (lastCategory === "all") {
+        sets = await prisma.set.findMany();
+      } else {
+        sets = await prisma.set.findMany({
+          where: { brand: lastCategory },
         });
+      }
+      return { props: { items: sets } };
 
-  return {
-    props: {
-      items,
-    },
-  };
+    case CatalogueCategory.fashion:
+      let items;
+      if (lastCategory === "all" && categories.length > 2) {
+        items = await prisma.item.findMany({
+          where: { category: { in: CATEGORY_TREE[categories[1]] } },
+        });
+      } else if (lastCategory === "all") {
+        items = await prisma.item.findMany();
+      } else {
+        items = await prisma.item.findMany({
+          where: { category: lastCategory },
+        });
+      }
+      return { props: { items } };
+
+    default:
+      return { props: {} };
+  }
 }
+
+// const items =
+//   supercategory === CatalogueCategory.set
+//     ? await prisma.set.findMany()
+//     : await prisma.item.findMany({
+//         where: {
+//           category,
+//         },
+//       });
 
 export async function maybeGetStaticProps() {
   const catalogItems = [
@@ -125,8 +152,8 @@ export async function maybeGetStaticPaths() {
 //
 export default function CatalogPage({ children, sets, items }) {
   const router = useRouter();
-  const { category } = router.query;
-  const categories = category ? category.split("-") : [];
+  const { categoryPath } = router.query;
+  const categories = categoryPath ? categoryPath.split("-") : [];
   const catalogHeadingLabel = `${categories[0]} Catalog - ${
     categories[categories.length - 1]
   } Items`;
@@ -148,6 +175,8 @@ export default function CatalogPage({ children, sets, items }) {
       <main>
         <article>
           <h2>{catalogHeadingLabel}</h2>
+
+          <CatalogListSettings />
 
           <ul style={{ display: "flex" }}>
             {items.length

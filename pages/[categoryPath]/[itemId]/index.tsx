@@ -5,14 +5,14 @@ import { useRouter } from "next/router";
 import startCase from "lodash/startCase";
 import prisma from "../../../prisma/prisma";
 import getNestedCategoryPath from "../../../utils/getNestedCategoryPath";
-import { FashionCategory } from "../../../types/types";
+import { CatalogueCategory, FashionCategory } from "../../../types/types";
 import PageHeader from "../../../components/PageHeader";
 
 export async function getServerSideProps({ params }) {
   const itemId = params.itemId;
   let item;
 
-  if (itemId.split("__")[1] === FashionCategory.set) {
+  if (itemId.split("__")[1] === CatalogueCategory.set) {
     item = await prisma.set.findFirst({
       where: {
         id: itemId,
@@ -69,7 +69,7 @@ export default function ItemPage({ item }) {
           <small>
             Part of set{" "}
             <Link
-              href={`/${getNestedCategoryPath(FashionCategory.set)}/${
+              href={`/${getNestedCategoryPath(CatalogueCategory.set)}/${
                 item.setId
               }`}
             >{`"${item.set.name}"`}</Link>
@@ -80,7 +80,12 @@ export default function ItemPage({ item }) {
       </header>
 
       <main>
-        <Image src="/images/" height={200} width={100} alt={item.name} />
+        <Image
+          src={`/images/preview__${item.id}.jpg`}
+          height={450}
+          width={350}
+          alt={item.name}
+        />
 
         {!isSet && (
           <>
