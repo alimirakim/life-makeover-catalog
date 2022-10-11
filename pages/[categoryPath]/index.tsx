@@ -22,6 +22,7 @@ import Tabs from "../../components/Tabs";
 import PageFooter from "../../components/PageFooter";
 import { Item } from "../../types/interfaces";
 import CatalogListSettings from "../../components/CatalogListSettings";
+import PaletteButtons from "../../components/PaletteButtons";
 
 export async function getServerSideProps({ params }) {
   const categories = params.categoryPath.split("-");
@@ -177,6 +178,8 @@ export default function CatalogPage({ children, sets, items }) {
           <h2>{catalogHeadingLabel}</h2>
 
           <CatalogListSettings />
+
+          <PaletteButtons />
 
           <ul style={{ display: "flex" }}>
             {items.length

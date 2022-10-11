@@ -7,6 +7,8 @@ import prisma from "../../../prisma/prisma";
 import getNestedCategoryPath from "../../../utils/getNestedCategoryPath";
 import { CatalogueCategory, FashionCategory } from "../../../types/types";
 import PageHeader from "../../../components/PageHeader";
+import Tag from "../../../components/Tag";
+import styles from "./itemId.module.scss";
 
 export async function getServerSideProps({ params }) {
   const itemId = params.itemId;
@@ -90,10 +92,18 @@ export default function ItemPage({ item }) {
         {!isSet && (
           <>
             <section>
-              <h2>Tags</h2>
+              <h2 className={styles.sectionTitle}>Tags</h2>
               <ul>
-                {item.tag1 && <li>{item.tag1}</li>}
-                {item.tag2 && <li>{item.tag2}</li>}
+                {item.tag1 && (
+                  <li>
+                    <Tag tag={item.tag1} />
+                  </li>
+                )}
+                {item.tag2 && (
+                  <li>
+                    <Tag tag={item.tag2} />
+                  </li>
+                )}
               </ul>
             </section>
 

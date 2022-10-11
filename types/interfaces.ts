@@ -159,6 +159,7 @@ export enum ObtainType {
   event,
   stage,
   exchange,
+  exchangeInspirationCenter,
   exchangeGuildShop,
   exchangeDecomStore,
   exchangeFashionShop,

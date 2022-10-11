@@ -1497,16 +1497,24 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__dress__refreshing_mint",
+                  quantity: 63,
+                },
+                {
+                  itemId: "fashion__face__beyond_the_dune",
+                  quantity: 88,
+                },
+                {
+                  itemId: "fashion__socks__snowy_ribbon",
+                  quantity: 87,
+                },
+                {
+                  itemId: "fashion__tattoo__fiery_badge",
+                  quantity: 41,
+                },
+              ],
             },
           ],
         },
@@ -1526,16 +1534,20 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__dress__fleeting_gold",
+                  quantity: 21,
+                },
+                {
+                  itemId: "fashion__necklace__islands_heart",
+                  quantity: 31,
+                },
+                {
+                  itemId: "fashion__wrist__empathetic_type",
+                  quantity: 31,
+                },
+              ],
             },
           ],
         },
@@ -1555,16 +1567,24 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__bottom__gilded_forest",
+                  quantity: 20,
+                },
+                {
+                  itemId: "fashion__face__diamond_alliance",
+                  quantity: 66,
+                },
+                {
+                  itemId: "fashion__necklace__islands_heart",
+                  quantity: 66,
+                },
+                {
+                  itemId: "fashion__earrings__floral_farewell",
+                  quantity: 22,
+                },
+              ],
             },
           ],
         },
@@ -1584,16 +1604,20 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__dress__southern_holiday",
+                  quantity: 11,
+                },
+                {
+                  itemId: "fashion__hat__coupled_wings",
+                  quantity: 55,
+                },
+                {
+                  itemId: "fashion__face__diamond_alliance",
+                  quantity: 55,
+                },
+              ],
             },
           ],
         },
@@ -1613,16 +1637,20 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__bottom__blueberry_bubble",
+                  quantity: 20,
+                },
+                {
+                  itemId: "fashion__face__beyond_the_dune",
+                  quantity: 31,
+                },
+                {
+                  itemId: "fashion__tattoo__silent_poetry",
+                  quantity: 41,
+                },
+              ],
             },
           ],
         },
@@ -3011,16 +3039,20 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__dress__fleeting_gold",
+                  quantity: 7,
+                },
+                {
+                  itemId: "fashion__earrings__summer_love",
+                  quantity: 27,
+                },
+                {
+                  itemId: "fashion__shoes__rusted_manor",
+                  quantity: 22,
+                },
+              ],
             },
           ],
         },
@@ -3040,16 +3072,20 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__bottom__gilded_forest",
+                  quantity: 6,
+                },
+                {
+                  itemId: "fashion__face__flowing_snow",
+                  quantity: 27,
+                },
+                {
+                  itemId: "fashion__necklace__golden_light",
+                  quantity: 22,
+                },
+              ],
             },
           ],
         },
@@ -3069,16 +3105,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__dress__honeypeach",
+                  quantity: 3,
+                },
+                {
+                  itemId: "fashion__socks__snow_hidden",
+                  quantity: 26,
+                },
+              ],
             },
           ],
         },
@@ -3127,16 +3163,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__dress__refreshing_mint",
+                  quantity: 7,
+                },
+                {
+                  itemId: "fashion__anklet__triangle_code",
+                  quantity: 27,
+                },
+              ],
             },
           ],
         },
@@ -5115,20 +5151,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftMindTravel,
-              // materialCost: [
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__socks__bright_feeling",
+                  quantity: 41,
+                },
+                {
+                  itemId: "fashion__top__dynamic_youth",
+                  quantity: 52,
+                },
+              ],
             },
           ],
         },
@@ -5149,20 +5181,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftMindTravel,
-              // materialCost: [
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__eyelashes__shadow_of_tree",
+                  quantity: 63,
+                },
+                {
+                  itemId: "fashion__dress__southern_holiday",
+                  quantity: 31,
+                },
+              ],
             },
           ],
         },
@@ -5217,20 +5245,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftMindTravel,
-              // materialCost: [
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__socks__night_cherry",
+                  quantity: 25,
+                },
+                {
+                  itemId: "fashion__hairstyle__daytime_stars",
+                  quantity: 26,
+                },
+              ],
             },
           ],
         },
@@ -5251,20 +5275,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftMindTravel,
-              // materialCost: [
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__necklace__beautiful_song",
+                  quantity: 25,
+                },
+                {
+                  itemId: "fashion__dress__swans_peck",
+                  quantity: 23,
+                },
+              ],
             },
           ],
         },
@@ -5285,20 +5305,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftMindTravel,
-              // materialCost: [
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__socks__night_shadow",
+                  quantity: 19,
+                },
+                {
+                  itemId: "fashion__top__curtain_of_night",
+                  quantity: 23,
+                },
+              ],
             },
           ],
         },
@@ -5319,20 +5335,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftMindTravel,
-              // materialCost: [
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              //     {
-              //         itemId: "fashion__",
-              //         quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__bottom__spring_overture",
+                  quantity: 19,
+                },
+                {
+                  itemId: "fashion__top__cherry_cream",
+                  quantity: 20,
+                },
+              ],
             },
           ],
         },
@@ -6394,16 +6406,20 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__dress__honeypeach",
+                  quantity: 5,
+                },
+                {
+                  itemId: "fashion__tattoo__paper_plane",
+                  quantity: 42,
+                },
+                {
+                  itemId: "fashion__necklace__golden_light",
+                  quantity: 21,
+                },
+              ],
             },
           ],
         },
@@ -6424,16 +6440,20 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__dress__refreshing_mint",
+                  quantity: 16,
+                },
+                {
+                  itemId: "fashion__bottom__heat_wave",
+                  quantity: 64,
+                },
+                {
+                  itemId: "fashion__dress__unfettered_trip",
+                  quantity: 31,
+                },
+              ],
             },
           ],
         },
@@ -6454,16 +6474,20 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__dress__refreshing_mint",
+                  quantity: 5,
+                },
+                {
+                  itemId: "fashion__wrist__deep_resonance",
+                  quantity: 21,
+                },
+                {
+                  itemId: "fashion__shoes__rusted_manor",
+                  quantity: 21,
+                },
+              ],
             },
           ],
         },
@@ -6544,16 +6568,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__bottom__gilded_forest",
+                  quantity: 5,
+                },
+                {
+                  itemId: "fashion__top__autumn_farm",
+                  quantity: 21,
+                },
+              ],
             },
           ],
         },
@@ -6574,16 +6598,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__bottom__blueberry_bubble",
+                  quantity: 5,
+                },
+                {
+                  itemId: "fashion__earrings__teardrop_of_star",
+                  quantity: 21,
+                },
+              ],
             },
           ],
         },
@@ -6645,16 +6669,20 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__hair__verdant_tassle",
+                  quantity: 12,
+                },
+                {
+                  itemId: "fashion__face__tender_gaze",
+                  quantity: 13,
+                },
+                {
+                  itemId: "fashion__hat__phantom_flower",
+                  quantity: 12,
+                },
+              ],
             },
           ],
         },
@@ -6675,16 +6703,20 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__hat__dreamwalker",
+                  quantity: 14,
+                },
+                {
+                  itemId: "fashion__face__knight_order",
+                  quantity: 14,
+                },
+                {
+                  itemId: "fashion__shoes__mystery_story",
+                  quantity: 12,
+                },
+              ],
             },
           ],
         },
@@ -6705,16 +6737,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__shoes__strawberry_soda",
+                  quantity: 11,
+                },
+                {
+                  itemId: "fashion__socks__long_moonset",
+                  quantity: 13,
+                },
+              ],
             },
           ],
         },
@@ -6735,16 +6767,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__socks__blackcat_girl",
+                  quantity: 14,
+                },
+                {
+                  itemId: "fashion__hair__birchleaf_pears",
+                  quantity: 13,
+                },
+              ],
             },
           ],
         },
@@ -6765,16 +6797,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__shoes__fluttering_wings",
+                  quantity: 13,
+                },
+                {
+                  itemId: "fashion__earrings__love_melody",
+                  quantity: 13,
+                },
+              ],
             },
           ],
         },
@@ -6795,16 +6827,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__shoes__motley_nightlight",
+                  quantity: 10,
+                },
+                {
+                  itemId: "fashion__hair__starry_soda",
+                  quantity: 13,
+                },
+              ],
             },
           ],
         },
@@ -6825,16 +6857,16 @@ const sets: Set[] = [
           obtainMethods: [
             {
               obtainType: ObtainType.craftStoryQuest,
-              // materialCost: [
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              //     {
-              //     itemId: "fashion__",
-              //     quantity: ,
-              //     },
-              // ],
+              materialCost: [
+                {
+                  itemId: "fashion__gloves__capturing_sunlight",
+                  quantity: 15,
+                },
+                {
+                  itemId: "fashion__necklace__starry_night",
+                  quantity: 15,
+                },
+              ],
             },
           ],
         },
@@ -7171,6 +7203,23 @@ const sets: Set[] = [
             fresh: StyleRank.c,
           },
           obtainMethods: [{ obtainType: ObtainType.event }],
+          palettes: [
+            [
+              [10, 3],
+              [13, 8],
+              [11, 4],
+            ],
+            [
+              [10, 3],
+              [10, 7],
+              [1, 6],
+            ],
+            [
+              [16, 1],
+              [8, 1],
+              [8, 5],
+            ],
+          ],
         },
         {
           id: "fashion__socks__pinkish_dream",
@@ -7186,6 +7235,7 @@ const sets: Set[] = [
             fresh: StyleRank.c,
           },
           obtainMethods: [{ obtainType: ObtainType.event }],
+          palettes: [[[15, 1]], [[2, 6]], [[8, 5]]],
         },
         {
           id: "fashion__shoes__salt_fragrance",
@@ -7201,6 +7251,23 @@ const sets: Set[] = [
             fresh: StyleRank.c,
           },
           obtainMethods: [{ obtainType: ObtainType.event }],
+          palettes: [
+            [
+              [1, 4],
+              [0, 0],
+              [0, 0],
+            ],
+            [
+              [1, 1],
+              [16, 4],
+              [11, 5],
+            ],
+            [
+              [6, 8],
+              [15, 8],
+              [12, 2],
+            ],
+          ],
         },
         {
           id: "fashion__hair__moonlit_date",
@@ -7216,6 +7283,20 @@ const sets: Set[] = [
             fresh: StyleRank.c,
           },
           obtainMethods: [{ obtainType: ObtainType.event }],
+          palettes: [
+            [
+              [5, 1],
+              [15, 1],
+            ],
+            [
+              [2, 4],
+              [7, 4],
+            ],
+            [
+              [14, 7],
+              [14, 4],
+            ],
+          ],
         },
         {
           id: "fashion__necklace__shattered_light",
@@ -7231,6 +7312,7 @@ const sets: Set[] = [
             fresh: StyleRank.c,
           },
           obtainMethods: [{ obtainType: ObtainType.event }],
+          palettes: [[[1, 2]], [[1, 3]], [[16, 5]]],
         },
       ],
     },
