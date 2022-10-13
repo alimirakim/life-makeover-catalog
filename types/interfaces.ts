@@ -149,6 +149,16 @@ export enum ObtainType {
   craftStoryQuest,
   craftMindTravel,
   craftOther,
+  lightchase,
+  event,
+  stage,
+  exchange,
+  reward, // goals, chapter packs, ally evolution, etc...
+  beautycourse,
+  fashionCode,
+  premium,
+  origin,
+
   lightchaseStarlight,
   lightchaseEssence,
   lightchaseBeloved,
@@ -156,9 +166,8 @@ export enum ObtainType {
   lightchaseNirvana,
   lightchaseDewyTears,
   lightchaseSnowDome,
-  event,
-  stage,
-  exchange,
+  exchangeChallengeShop,
+  exchangeGlimmerShop,
   exchangeInspirationCenter,
   exchangeGuildShop,
   exchangeDecomStore,
@@ -171,13 +180,16 @@ export enum ObtainType {
   exchangeSpecialRebates,
   exchangeClothingStore,
   exchangeGlitteringDecom,
-  reward, // goals, chapter packs, ally evolution, etc...
+  rewardEvolution,
+  rewardEndorsementQueen,
+  rewardSignIn,
   rewardLevel,
-  beautycourse,
+  rewardFreshmenLimited,
+  rewardChapterPack,
   giftExhibition,
   giftAllies,
   rebateGift,
-  fashionCode,
+  operationEvents,
 }
 
 export type ObtainMethod =
@@ -208,7 +220,7 @@ interface ObtainMethodEvent {
 
 interface ObtainMethodStage {
   obtainType: ObtainType.stage;
-  stageIds?: string[];
+  stageIds?: [number, number][];
   mode?: "normal" | "hard";
 }
 
@@ -220,9 +232,11 @@ interface ObtainMethodExchange {
 }
 
 interface ObtainMethodReward {
-  obtainType: ObtainType.reward;
+  obtainType: ObtainType.reward | ObtainType.rewardChapterPack;
   rewardType?: "exhibitionGift" | "levelReward" | "chapterPack";
   description?: string;
+  chapter?: number;
+  mode?: "normal" | "hard" | "challenge";
 }
 
 interface ObtainMethodBeautyCourse {
@@ -232,8 +246,11 @@ interface ObtainMethodBeautyCourse {
 }
 
 interface ObtainMethodCraft {
-  obtainType: ObtainType.craft;
-  craftCategory?: "storyQuest" | "mindTravel" | "other";
+  obtainType:
+    | ObtainType.craft
+    | ObtainType.craftMindTravel
+    | ObtainType.craftStoryQuest
+    | ObtainType.craftOther;
   materialCost?: { itemId: string; quantity: number }[];
 }
 

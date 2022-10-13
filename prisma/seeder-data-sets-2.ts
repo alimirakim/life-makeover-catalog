@@ -1,5 +1,5 @@
 import { ObtainType, Set } from "../types/interfaces";
-import { AccessoryCategory, FashionCategory } from "../types/types";
+import { AccessoryCategory, FashionCategory, Tag } from "../types/types";
 
 const sets_2: Set[] = [
   {
@@ -3809,12 +3809,180 @@ const sets_2: Set[] = [
     mainStyle: Style.cool,
     items: {
       create: [
-        "fashion__hairstyle__girly_breeze",
-        "fashion__dress__lonely_melody",
-        "fashion__shoes__night_steps",
-        "fashion__earrings__night_rhythm",
-        "fashion__necklace__dark_flower",
-        "fashion__anklet__night_jade",
+        {
+          id: "fashion__hairstyle__girly_breeze",
+          name: "Girly Breeze",
+          starRank: 5,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__dress__lonely_melody",
+          name: "Lonely Melody",
+          starRank: 5,
+          category: FashionCategory.dress,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__night_steps",
+          name: "Night Steps",
+          starRank: 5,
+          category: FashionCategory.shoes,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__earrings__night_rhythm",
+          name: "Night Rhythm",
+          starRank: 5,
+          category: AccessoryCategory.earrings,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__necklace__dark_flower",
+          name: "Dark Flower",
+          starRank: 5,
+          category: AccessoryCategory.necklace,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__anklet__night_jade",
+          name: "Night Jade",
+          starRank: 5,
+          category: AccessoryCategory.anklet,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -3827,13 +3995,118 @@ const sets_2: Set[] = [
     mainStyle: Style.cool,
     items: {
       create: [
-        "fashion__hairstyle__glory_night",
-        "fashion__top__golden_neon",
-        "fashion__bottom__unrelenting_night",
-        "fashion__socks__diamond_clock",
-        "fashion__shoes__void_notes",
-        "fashion__hat__charming_night",
-        "fashion__wrist__light_picker",
+        {
+          id: "fashion__hairstyle__glory_night",
+          name: "Glory Night",
+          starRank: 5,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.event }],
+        },
+        {
+          id: "fashion__top__golden_neon",
+          name: "Golden Neon",
+          starRank: 5,
+          category: FashionCategory.top,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.event }],
+        },
+        {
+          id: "fashion__bottom__unrelenting_night",
+          name: "Unrelenting Night",
+          starRank: 5,
+          category: FashionCategory.bottom,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.event }],
+        },
+        {
+          id: "fashion__socks__diamond_clock",
+          name: "Diamond Clock",
+          starRank: 5,
+          category: FashionCategory.socks,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.event }],
+        },
+        {
+          id: "fashion__shoes__void_notes",
+          name: "Void Notes",
+          starRank: 5,
+          category: FashionCategory.shoes,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.event }],
+        },
+        {
+          id: "fashion__hat__charming_night",
+          name: "Charming Night",
+          starRank: 5,
+          category: AccessoryCategory.hat,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.event }],
+        },
+        {
+          id: "fashion__wrist__light_picker",
+          name: "Light Picker",
+          starRank: 5,
+          category: AccessoryCategory.wrist,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.event }],
+        },
       ],
     },
   },
@@ -3846,13 +4119,111 @@ const sets_2: Set[] = [
     mainStyle: Style.lively,
     items: {
       create: [
-        "fashion__hairstyle__walnut_academy",
-        "fashion__coat__ink_drawn_kingdom",
-        "fashion__top__flaming_sky",
-        "fashion__bottom__fiery_cloud",
-        "fashion__socks__royal_golden_medal",
-        "fashion__shoes__cloud_of_fortune",
-        "fashion__earrings__lock_of_wish",
+        {
+          id: "fashion__hairstyle__walnut_academy",
+          name: "Walnut Academy",
+          starRank: 5,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.traditional,
+          styleRanks: {
+            lively: StyleRank.ss,
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNirvana }],
+        },
+        {
+          id: "fashion__coat__ink_drawn_kingdom",
+          name: "Ink Drawn Kingdom",
+          starRank: 5,
+          category: FashionCategory.coat,
+          tag1: Tag.traditional,
+          styleRanks: {
+            lively: StyleRank.ss,
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNirvana }],
+        },
+        {
+          id: "fashion__top__flaming_sky",
+          name: "Flaming Sky",
+          starRank: 5,
+          category: FashionCategory.top,
+          tag1: Tag.traditional,
+          styleRanks: {
+            lively: StyleRank.ss,
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNirvana }],
+        },
+        {
+          id: "fashion__bottom__fiery_cloud",
+          name: "Fiery Cloud",
+          starRank: 5,
+          category: FashionCategory.bottom,
+          tag1: Tag.traditional,
+          styleRanks: {
+            lively: StyleRank.ss,
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNirvana }],
+        },
+        {
+          id: "fashion__socks__royal_golden_medal",
+          name: "Royal Golden Medal",
+          starRank: 5,
+          category: FashionCategory.socks,
+          tag1: Tag.traditional,
+          styleRanks: {
+            lively: StyleRank.ss,
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNirvana }],
+        },
+        {
+          id: "fashion__shoes__cloud_of_fortune",
+          name: "Cloud Of Fortune",
+          starRank: 5,
+          category: FashionCategory.shoes,
+          tag1: Tag.traditional,
+          styleRanks: {
+            lively: StyleRank.ss,
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNirvana }],
+        },
+        {
+          id: "fashion__earrings__lock_of_wish",
+          name: "Lock of Wish",
+          starRank: 5,
+          category: AccessoryCategory.earrings,
+          tag1: Tag.traditional,
+          styleRanks: {
+            lively: StyleRank.ss,
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNirvana }],
+        },
       ],
     },
   },
@@ -3865,14 +4236,134 @@ const sets_2: Set[] = [
     mainStyle: Style.sexy,
     items: {
       create: [
-        "fashion__hairstyle__starry_oath",
-        "fashion__dress__witch_contract",
-        "fashion__socks__witchs_whisper",
-        "fashion__shoes__devils_pact",
-        "fashion__hat__vicissitudes_park",
-        "fashion__gloves__catch_stars",
-        "fashion__wrist__diamond_pointer",
-        "fashion__handheld__starchase_staff",
+        {
+          id: "fashion__hairstyle__starry_oath",
+          name: "Starry Oath",
+          starRank: 5,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.gothic,
+          tag2: Tag.fairytale,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            gorgeous: StyleRank.s,
+            cool: StyleRank.a,
+            lively: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__dress__witch_contract",
+          name: "Witch Contract",
+          starRank: 5,
+          category: FashionCategory.dress,
+          tag1: Tag.gothic,
+          tag2: Tag.fairytale,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            cool: StyleRank.s,
+            lively: StyleRank.a,
+            gorgeous: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__socks__witchs_whisper",
+          name: "Witch's Whisper",
+          starRank: 5,
+          category: FashionCategory.socks,
+          tag1: Tag.gothic,
+          tag2: Tag.fairytale,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            cool: StyleRank.s,
+            lively: StyleRank.a,
+            gorgeous: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__shoes__devils_pact",
+          name: "Devil's Pact",
+          starRank: 5,
+          category: FashionCategory.shoes,
+          tag1: Tag.gothic,
+          tag2: Tag.fairytale,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            cool: StyleRank.s,
+            lively: StyleRank.a,
+            gorgeous: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__hat__vicissitudes_park",
+          name: "Vicissitude Park",
+          starRank: 5,
+          category: AccessoryCategory.hat,
+          tag1: Tag.gothic,
+          tag2: Tag.fairytale,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            cool: StyleRank.s,
+            lively: StyleRank.a,
+            gorgeous: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__gloves__catch_stars",
+          name: "Catch Stars",
+          starRank: 5,
+          category: AccessoryCategory.gloves,
+          tag1: Tag.gothic,
+          tag2: Tag.fairytale,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            gorgeous: StyleRank.s,
+            cool: StyleRank.a,
+            lively: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__wrist__diamond_pointer",
+          name: "Diamond Pointer",
+          starRank: 5,
+          category: AccessoryCategory.wrist,
+          tag1: Tag.gothic,
+          tag2: Tag.fairytale,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            cool: StyleRank.s,
+            lively: StyleRank.a,
+            gorgeous: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__handheld__starchase_staff",
+          name: "Starchase Staff",
+          starRank: 5,
+          category: AccessoryCategory.handheld,
+          tag1: Tag.gothic,
+          tag2: Tag.fairytale,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            gorgeous: StyleRank.s,
+            lively: StyleRank.a,
+            cool: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
       ],
     },
   },
@@ -3885,14 +4376,166 @@ const sets_2: Set[] = [
     mainStyle: Style.sexy,
     items: {
       create: [
-        "fashion__hairstyle__busy_night",
-        "fashion__dress__firefly_avenue",
-        "fashion__coat__night_breeze",
-        "fashion__socks__night_song",
-        "fashion__shoes__road_to_glory",
-        "fashion__earrings__flowing_light",
-        "fashion__necklace__shining_stars",
-        "fashion__handheld__star_glimmer",
+        {
+          id: "fashion__hairstyle__busy_night",
+          name: "Busy Night",
+          starRank: 5,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.street,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            simple: StyleRank.s,
+            lively: StyleRank.a,
+            sweet: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+        {
+          id: "fashion__dress__firefly_avenue",
+          name: "Firefly Avenue",
+          starRank: 5,
+          category: FashionCategory.dress,
+          tag1: Tag.street,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            simple: StyleRank.s,
+            lively: StyleRank.a,
+            cool: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+        {
+          id: "fashion__coat__night_breeze",
+          name: "Night Breeze",
+          starRank: 5,
+          category: FashionCategory.coat,
+          tag1: Tag.street,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            simple: StyleRank.s,
+            cool: StyleRank.a,
+            warm: StyleRank.a,
+            lively: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__night_song",
+          name: "Night Song",
+          starRank: 5,
+          category: FashionCategory.socks,
+          tag1: Tag.street,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            simple: StyleRank.s,
+            lively: StyleRank.a,
+            cool: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__road_to_glory",
+          name: "Road to Glory",
+          starRank: 5,
+          category: FashionCategory.shoes,
+          tag1: Tag.street,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            gorgeous: StyleRank.s,
+            warm: StyleRank.a,
+            cool: StyleRank.a,
+            lively: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+        {
+          id: "fashion__earrings__flowing_light",
+          name: "Flowing Light",
+          starRank: 5,
+          category: AccessoryCategory.earrings,
+          tag1: Tag.street,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            simple: StyleRank.s,
+            lively: StyleRank.a,
+            cool: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+        {
+          id: "fashion__necklace__shining_stars",
+          name: "Shining Stars",
+          starRank: 5,
+          category: AccessoryCategory.necklace,
+          tag1: Tag.street,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            simple: StyleRank.s,
+            lively: StyleRank.a,
+            cool: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+        {
+          id: "fashion__handheld__star_glimmer",
+          name: "Star Glimmer",
+          starRank: 5,
+          category: AccessoryCategory.handheld,
+          tag1: Tag.street,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            simple: StyleRank.s,
+            lively: StyleRank.a,
+            cool: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
       ],
     },
   },
@@ -3905,14 +4548,166 @@ const sets_2: Set[] = [
     mainStyle: Style.sexy,
     items: {
       create: [
-        "fashion__hairstyle__silent_nocturne",
-        "fashion__top__auggilias_kiss",
-        "fashion__bottom__dance_of_black_swan",
-        "fashion__socks__interlaced_waltz",
-        "fashion__shoes__moon_river_ripples",
-        "fashion__hat__soak_in_the_dawn",
-        "fashion__earrings__evening_prayer",
-        "fashion__gloves__dormant_night",
+        {
+          id: "fashion__hairstyle__silent_nocturne",
+          name: "Silent Nocturne",
+          starRank: 5,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.classic,
+          tag2: Tag.dancer,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sweet: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.giftExhibition,
+            },
+          ],
+        },
+        {
+          id: "fashion__top__auggilias_kiss",
+          name: "Auggilia's Kiss",
+          starRank: 5,
+          category: FashionCategory.top,
+          tag1: Tag.classic,
+          tag2: Tag.dancer,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            gorgeous: StyleRank.s,
+            cool: StyleRank.a,
+            elegant: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.giftExhibition,
+            },
+          ],
+        },
+        {
+          id: "fashion__bottom__dance_of_black_swan",
+          name: "Dance of Black Swan",
+          starRank: 5,
+          category: FashionCategory.bottom,
+          tag1: Tag.classic,
+          tag2: Tag.dancer,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            gorgeous: StyleRank.s,
+            elegant: StyleRank.a,
+            sweet: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.giftExhibition,
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__interlaced_waltz",
+          name: "Interlaced Waltz",
+          starRank: 5,
+          category: FashionCategory.socks,
+          tag1: Tag.classic,
+          tag2: Tag.dancer,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sweet: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.giftExhibition,
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__moon_river_ripples",
+          name: "Moon River Ripples",
+          starRank: 5,
+          category: FashionCategory.shoes,
+          tag1: Tag.classic,
+          tag2: Tag.dancer,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            cool: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.giftExhibition,
+            },
+          ],
+        },
+        {
+          id: "fashion__hat__soak_in_the_dawn",
+          name: "Soak in the Dawn",
+          starRank: 5,
+          category: AccessoryCategory.hat,
+          tag1: Tag.classic,
+          tag2: Tag.dancer,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            elegant: StyleRank.s,
+            cool: StyleRank.a,
+            gorgeous: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.giftExhibition,
+            },
+          ],
+        },
+        {
+          id: "fashion__earrings__evening_prayer",
+          name: "Evening Prayer",
+          starRank: 5,
+          category: AccessoryCategory.earrings,
+          tag1: Tag.classic,
+          tag2: Tag.dancer,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            gorgeous: StyleRank.s,
+            elegant: StyleRank.a,
+            cool: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.giftExhibition,
+            },
+          ],
+        },
+        {
+          id: "fashion__gloves__dormant_night",
+          name: "Dormant Night",
+          starRank: 5,
+          category: AccessoryCategory.gloves,
+          tag1: Tag.classic,
+          tag2: Tag.dancer,
+          styleRanks: {
+            sexy: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            cool: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.giftExhibition,
+            },
+          ],
+        },
       ],
     },
   },
@@ -3925,15 +4720,141 @@ const sets_2: Set[] = [
     mainStyle: Style.cool,
     items: {
       create: [
-        "fashion__hairstyle__sunshine_storm",
-        "fashion__dress__azure_rhapsody",
-        "fashion__coat__reversed_universe",
-        "fashion__shoes__azure_knight",
-        "fashion__hat__meow_meow",
-        "fashion__hair__sound_of_stars",
-        "fashion__gloves__star_guardian",
-        "fashion__handheld__blue_electronica",
-        "fashion__wings__transcendent_scale",
+        {
+          id: "fashion__hairstyle__sunshine_storm",
+          name: "Sunshine Storm",
+          starRank: 5,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.cyberpunk,
+          styleRanks: {
+            cool: StyleRank.ss,
+            gorgeous: StyleRank.s,
+            lively: StyleRank.a,
+            sexy: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__dress__azure_rhapsody",
+          name: "Azure Rhapsody",
+          starRank: 5,
+          category: FashionCategory.dress,
+          tag1: Tag.cyberpunk,
+          styleRanks: {
+            cool: StyleRank.ss,
+            lively: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__coat__reversed_universe",
+          name: "Reversed Universe",
+          starRank: 5,
+          category: FashionCategory.coat,
+          tag1: Tag.cyberpunk,
+          styleRanks: {
+            cool: StyleRank.ss,
+            lively: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__shoes__azure_knight",
+          name: "Azure Knight",
+          starRank: 5,
+          category: FashionCategory.shoes,
+          tag1: Tag.cyberpunk,
+          styleRanks: {
+            cool: StyleRank.ss,
+            lively: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__hat__meow_meow",
+          name: "Meow Meow",
+          starRank: 5,
+          category: AccessoryCategory.hat,
+          tag1: Tag.cyberpunk,
+          styleRanks: {
+            cool: StyleRank.ss,
+            lively: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__hair__sound_of_stars",
+          name: "Sound of Stars",
+          starRank: 5,
+          category: AccessoryCategory.hair,
+          tag1: Tag.cyberpunk,
+          styleRanks: {
+            cool: StyleRank.ss,
+            lively: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__gloves__star_guardian",
+          name: "Star Guardian",
+          starRank: 5,
+          category: AccessoryCategory.gloves,
+          tag1: Tag.cyberpunk,
+          styleRanks: {
+            cool: StyleRank.ss,
+            lively: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__handheld__blue_electronica",
+          name: "Blue Electronica",
+          starRank: 5,
+          category: AccessoryCategory.handheld,
+          tag1: Tag.cyberpunk,
+          styleRanks: {
+            cool: StyleRank.ss,
+            gorgeous: StyleRank.s,
+            lively: StyleRank.a,
+            sexy: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
+        {
+          id: "fashion__wings__transcendent_scale",
+          name: "Transcendent Scale",
+          starRank: 5,
+          category: AccessoryCategory.wings,
+          tag1: Tag.cyberpunk,
+          styleRanks: {
+            cool: StyleRank.ss,
+            lively: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseEssence }],
+        },
       ],
     },
   },
@@ -3946,16 +4867,306 @@ const sets_2: Set[] = [
     mainStyle: Style.cool,
     items: {
       create: [
-        "fashion__hairstyle__eternal_flower",
-        "fashion__dress__evernight_rose",
-        "fashion__socks__nighttime_riddle",
-        "fashion__shoes__midnight_dance",
-        "fashion__hair__thistle_rose",
-        "fashion__earrings_night_prayer",
-        "fashion__necklace__dark_lord",
-        "fashion__wrist__rose_bracelet",
-        "fashion__gloves__red_crescent",
-        "fashion__wings__night_wings",
+        {
+          id: "fashion__hairstyle__eternal_flower",
+          name: "Eternal Flower",
+          starRank: 5,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.gothic,
+          tag2: Tag.lolita,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftMindTravel,
+              // materialCost: [
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__dress__evernight_rose",
+          name: "Evernight Rose",
+          starRank: 5,
+          category: FashionCategory.dress,
+          tag1: Tag.gothic,
+          tag2: Tag.lolita,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftMindTravel,
+              // materialCost: [
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__nighttime_riddle",
+          name: "Nighttime Riddle",
+          starRank: 5,
+          category: FashionCategory.socks,
+          tag1: Tag.gothic,
+          tag2: Tag.lolita,
+          styleRanks: {
+            cool: StyleRank.ss,
+            sexy: StyleRank.s,
+            gorgeous: StyleRank.a,
+            lively: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftMindTravel,
+              // materialCost: [
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__midnight_dance",
+          name: "Midnight Dance",
+          starRank: 5,
+          category: FashionCategory.shoes,
+          tag1: Tag.gothic,
+          tag2: Tag.lolita,
+          styleRanks: {
+            cool: StyleRank.ss,
+            sexy: StyleRank.s,
+            gorgeous: StyleRank.a,
+            elegant: StyleRank.a,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftMindTravel,
+              // materialCost: [
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__hair__thistle_rose",
+          name: "Thistle Rose",
+          starRank: 5,
+          category: AccessoryCategory.hair,
+          tag1: Tag.gothic,
+          tag2: Tag.lolita,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftMindTravel,
+              // materialCost: [
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__earrings_night_prayer",
+          name: "Night Prayer",
+          starRank: 5,
+          category: AccessoryCategory.earrings,
+          tag1: Tag.gothic,
+          tag2: Tag.lolita,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftMindTravel,
+              // materialCost: [
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__necklace__dark_lord",
+          name: "Dark Lord",
+          starRank: 5,
+          category: AccessoryCategory.necklace,
+          tag1: Tag.gothic,
+          tag2: Tag.lolita,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftMindTravel,
+              // materialCost: [
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__wrist__rose_bracelet",
+          name: "Rose Bracelet",
+          starRank: 5,
+          category: AccessoryCategory.wrist,
+          tag1: Tag.gothic,
+          tag2: Tag.lolita,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftMindTravel,
+              // materialCost: [
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__gloves__red_crescent",
+          name: "Red Crescent",
+          starRank: 5,
+          category: AccessoryCategory.gloves,
+          tag1: Tag.gothic,
+          tag2: Tag.lolita,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftMindTravel,
+              // materialCost: [
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__wings__night_wings",
+          name: "Night Wings",
+          starRank: 5,
+          category: AccessoryCategory.wings,
+          tag1: Tag.gothic,
+          tag2: Tag.lolita,
+          styleRanks: {
+            cool: StyleRank.ss,
+            elegant: StyleRank.s,
+            gorgeous: StyleRank.a,
+            sexy: StyleRank.a,
+            warm: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftMindTravel,
+              // materialCost: [
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              //     {
+              //         itemId: "fashion__",
+              //         quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -3968,11 +5179,81 @@ const sets_2: Set[] = [
     mainStyle: Style.sexy,
     items: {
       create: [
-        "fashion__dress__rosa_alba",
-        "fashion__socks__daytime_meteor",
-        "fashion__shoes__dusk_and_dawn",
-        "fashion__earrings__night_starsea",
-        "fashion__handheld__creeping_darkness",
+        {
+          id: "fashion__dress__rosa_alba",
+          name: "Rosa Alba",
+          starRank: 4,
+          category: FashionCategory.dress,
+          tag1: Tag.girl_group,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            lively: StyleRank.b,
+            simple: StyleRank.b,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseSnowDome }],
+        },
+        {
+          id: "fashion__socks__daytime_meteor",
+          name: "Daytime Meteor",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.girl_group,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            lively: StyleRank.b,
+            simple: StyleRank.b,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseSnowDome }],
+        },
+        {
+          id: "fashion__shoes__dusk_and_dawn",
+          name: "Dusk and Dawn",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.girl_group,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            lively: StyleRank.b,
+            simple: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseSnowDome }],
+        },
+        {
+          id: "fashion__earrings__night_starsea",
+          name: "Night Starsea",
+          starRank: 4,
+          category: AccessoryCategory.earrings,
+          tag1: Tag.girl_group,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            lively: StyleRank.b,
+            simple: StyleRank.b,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseSnowDome }],
+        },
+        {
+          id: "fashion__handheld__creeping_darkness",
+          name: "Creeping Darkness",
+          starRank: 4,
+          category: AccessoryCategory.handheld,
+          tag1: Tag.girl_group,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            lively: StyleRank.b,
+            simple: StyleRank.b,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseSnowDome }],
+        },
       ],
     },
   },
@@ -3985,11 +5266,171 @@ const sets_2: Set[] = [
     mainStyle: Style.lively,
     items: {
       create: [
-        "fashion__coat__locking_signal",
-        "fashion__top__throbbing_beats",
-        "fashion__bottom__unbalanced_beats",
-        "fashion__socks__layers_of_love",
-        "fashion__shoes__treecreeper",
+        {
+          id: "fashion__coat__locking_signal",
+          name: "Locking Signal",
+          starRank: 4,
+          category: FashionCategory.coat,
+          tag1: Tag.sporty,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            sexy: StyleRank.b,
+            fresh: StyleRank.b,
+            simple: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__top__throbbing_beats",
+          name: "Throbbing Beats",
+          starRank: 4,
+          category: FashionCategory.top,
+          tag1: Tag.sporty,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            sexy: StyleRank.b,
+            fresh: StyleRank.b,
+            simple: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__bottom__unbalanced_beats",
+          name: "Unbalanced Beats",
+          starRank: 4,
+          category: FashionCategory.bottom,
+          tag1: Tag.sporty,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            sexy: StyleRank.b,
+            fresh: StyleRank.b,
+            simple: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__layers_of_love",
+          name: "Layers of Love",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.sporty,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            sexy: StyleRank.b,
+            fresh: StyleRank.b,
+            simple: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__treecreeper",
+          name: "Treecreeper",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.sporty,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            warm: StyleRank.b,
+            simple: StyleRank.b,
+            sexy: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -4002,11 +5443,101 @@ const sets_2: Set[] = [
     mainStyle: Style.sexy,
     items: {
       create: [
-        "fashion__dress__seductive_city",
-        "fashion__coat__luminating_sky",
-        "fashion__socks__cover_of_dusk",
-        "fashion__shoes__phantom_steps",
-        "fashion__handheld__ever_flowing_cloud",
+        {
+          id: "fashion__dress__seductive_city",
+          name: "Seductive City",
+          starRank: 4,
+          category: FashionCategory.dress,
+          tag1: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            gorgeous: StyleRank.b,
+            elegant: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+        {
+          id: "fashion__coat__luminating_sky",
+          name: "Luminating Sky",
+          starRank: 4,
+          category: FashionCategory.coat,
+          tag1: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            gorgeous: StyleRank.b,
+            elegant: StyleRank.b,
+            warm: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__cover_of_dusk",
+          name: "Cover of Dusk",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            gorgeous: StyleRank.b,
+            elegant: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__phantom_steps_1",
+          name: "Phantom Steps",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            gorgeous: StyleRank.b,
+            elegant: StyleRank.b,
+            warm: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+        {
+          id: "fashion__handheld__ever_flowing_cloud",
+          name: "Ever-flowing Cloud",
+          starRank: 4,
+          category: AccessoryCategory.handheld,
+          tag1: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            gorgeous: StyleRank.b,
+            elegant: StyleRank.b,
+            warm: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
       ],
     },
   },
@@ -4019,10 +5550,122 @@ const sets_2: Set[] = [
     mainStyle: Style.simple,
     items: {
       create: [
-        "fashion__top__hearts_whisper",
-        "fashion__bottom__midnight_yearning",
-        "fashion__socks__myriad_thoughts",
-        "fashion__shoes__starlight_shadow",
+        {
+          id: "fashion__top__hearts_whisper",
+          name: "Heart's Whisper",
+          starRank: 4,
+          category: FashionCategory.top,
+          tag1: Tag.ladylike,
+          styleRanks: {
+            simple: StyleRank.s,
+            lively: StyleRank.a,
+            fresh: StyleRank.b,
+            cool: StyleRank.b,
+            sexy: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftOther,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__bottom__midnight_yearning",
+          name: "Midnight Yearning",
+          starRank: 4,
+          category: FashionCategory.bottom,
+          tag1: Tag.ladylike,
+          styleRanks: {
+            simple: StyleRank.s,
+            lively: StyleRank.a,
+            fresh: StyleRank.b,
+            cool: StyleRank.b,
+            sexy: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftOther,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__myriad_thoughts",
+          name: "Myriad Thoughts",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.ladylike,
+          styleRanks: {
+            simple: StyleRank.s,
+            lively: StyleRank.a,
+            fresh: StyleRank.b,
+            cool: StyleRank.b,
+            sexy: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftOther,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__starlight_shadow",
+          name: "Starlight Shadow",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.ladylike,
+          styleRanks: {
+            simple: StyleRank.s,
+            lively: StyleRank.a,
+            fresh: StyleRank.b,
+            cool: StyleRank.b,
+            sexy: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftOther,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -4035,11 +5678,156 @@ const sets_2: Set[] = [
     mainStyle: Style.simple,
     items: {
       create: [
-        "fashion__dress_cowslip_creeper",
-        "fashion__coat__night_aroma",
-        "fashion__socks__emotion_of_night",
-        "fashion__shoes__night_vines",
-        "fashion__handheld__blooming_jasmine",
+        {
+          id: "fashion__dress_cowslip_creeper",
+          name: "Cowslip Creeper",
+          starRank: 4,
+          category: FashionCategory.dress,
+          tag1: Tag.formal,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            simple: StyleRank.s,
+            elegant: StyleRank.a,
+            cool: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__coat__night_aroma",
+          name: "Night Aroma",
+          starRank: 4,
+          category: FashionCategory.coat,
+          tag1: Tag.formal,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            simple: StyleRank.s,
+            elegant: StyleRank.a,
+            cool: StyleRank.b,
+            sexy: StyleRank.b,
+            warm: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__emotion_of_night",
+          name: "Emotion Of Night",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.formal,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            simple: StyleRank.s,
+            elegant: StyleRank.a,
+            cool: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__night_vines",
+          name: "Night Vines",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.formal,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            simple: StyleRank.s,
+            elegant: StyleRank.a,
+            cool: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__handheld__blooming_jasmine",
+          name: "Blooming Jasmine",
+          starRank: 4,
+          category: AccessoryCategory.handheld,
+          tag1: Tag.formal,
+          tag2: Tag.ladylike,
+          styleRanks: {
+            simple: StyleRank.s,
+            elegant: StyleRank.a,
+            cool: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -4052,12 +5840,125 @@ const sets_2: Set[] = [
     mainStyle: Style.cool,
     items: {
       create: [
-        "fashion__dress__gilded_orbit",
-        "fashion__socks__sinking_moon_star",
-        "fashion__shoes__pilgrimage_of_star",
-        "fashion__hat__golden_ceremony",
-        "fashion__earrings__willow_twined_star",
-        "fashion__necklace__bright_star_trail",
+        {
+          id: "fashion__dress__gilded_orbit",
+          name: "Gilded Orbit",
+          starRank: 4,
+          category: FashionCategory.dress,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            elegant: StyleRank.a,
+            gorgeous: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+
+        {
+          id: "fashion__socks__sinking_moon_star",
+          name: "Sinking Moon Star",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            elegant: StyleRank.a,
+            gorgeous: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+
+        {
+          id: "fashion__shoes__pilgrimage_of_star",
+          name: "Pilgrimage of Star",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            elegant: StyleRank.a,
+            gorgeous: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+
+        {
+          id: "fashion__hat__golden_ceremony",
+          name: "Golden Ceremony",
+          starRank: 4,
+          category: AccessoryCategory.hat,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            elegant: StyleRank.a,
+            gorgeous: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+
+        {
+          id: "fashion__earrings__willow_twined_star",
+          name: "Willow Twined Star",
+          starRank: 4,
+          category: AccessoryCategory.earrings,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            elegant: StyleRank.a,
+            gorgeous: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.b,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
+
+        {
+          id: "fashion__necklace__bright_star_trail",
+          name: "Bright Star Trail",
+          starRank: 4,
+          category: AccessoryCategory.necklace,
+          tag1: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            elegant: StyleRank.a,
+            gorgeous: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.event,
+            },
+          ],
+        },
       ],
     },
   },
@@ -4070,12 +5971,210 @@ const sets_2: Set[] = [
     mainStyle: Style.cool,
     items: {
       create: [
-        "fashion__hairstyle__shining_night",
-        "fashion__top__dark_banquet",
-        "fashion__bottom__dark_night_phantom",
-        "fashion__socks__white_fantasy",
-        "fashion__shoes__phantom_steps",
-        "fashion__handheld__black_serenade",
+        {
+          id: "fashion__hairstyle__shining_night",
+          name: "Shining Night",
+          starRank: 4,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            simple: StyleRank.a,
+            sexy: StyleRank.b,
+            elegant: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__top__dark_banquet",
+          name: "Dark Banquet",
+          starRank: 4,
+          category: FashionCategory.top,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            elegant: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__bottom__dark_night_phantom",
+          name: "Dark Night Phantom",
+          starRank: 4,
+          category: FashionCategory.bottom,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            simple: StyleRank.a,
+            sexy: StyleRank.b,
+            elegant: StyleRank.b,
+            warm: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__white_fantasy",
+          name: "White Fantasy",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            simple: StyleRank.a,
+            sexy: StyleRank.b,
+            elegant: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__phantom_steps_2",
+          name: "Phantom Steps",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            elegant: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__handheld__black_serenade",
+          name: "Black Serenade",
+          starRank: 4,
+          category: AccessoryCategory.handheld,
+          tag1: Tag.ladylike,
+          tag2: Tag.street,
+          styleRanks: {
+            cool: StyleRank.s,
+            simple: StyleRank.a,
+            sexy: StyleRank.b,
+            elegant: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -4088,11 +6187,171 @@ const sets_2: Set[] = [
     mainStyle: Style.cool,
     items: {
       create: [
-        "fashion__top__song_of_thorns",
-        "fashion__bottom__endless_sound",
-        "fashion__socks__badge_of_thorns",
-        "fashion__shoes__step_over_thorns",
-        "fashion__necklace__ring_of_thorns",
+        {
+          id: "fashion__top__song_of_thorns",
+          name: "Song of Thorns",
+          starRank: 4,
+          category: FashionCategory.top,
+          tag1: Tag.preppy,
+          styleRanks: {
+            cool: StyleRank.s,
+            simple: StyleRank.a,
+            lively: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__bottom__endless_sound",
+          name: "Endless Sound",
+          starRank: 4,
+          category: FashionCategory.bottom,
+          tag1: Tag.preppy,
+          styleRanks: {
+            cool: StyleRank.s,
+            simple: StyleRank.a,
+            lively: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__badge_of_thorns",
+          name: "Badge of Thorns",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.preppy,
+          styleRanks: {
+            cool: StyleRank.s,
+            simple: StyleRank.a,
+            lively: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__step_over_thorns",
+          name: "Step Over Thorns",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.preppy,
+          styleRanks: {
+            cool: StyleRank.s,
+            simple: StyleRank.a,
+            lively: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__necklace__ring_of_thorns",
+          name: "Ring of Thorns",
+          starRank: 4,
+          category: AccessoryCategory.necklace,
+          tag1: Tag.preppy,
+          styleRanks: {
+            cool: StyleRank.s,
+            simple: StyleRank.a,
+            lively: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -4105,10 +6364,70 @@ const sets_2: Set[] = [
     mainStyle: Style.cool,
     items: {
       create: [
-        "fashion__dress__colorful_heart",
-        "fashion__shoes__glowing_shadow",
-        "fashion__hat__cotton_clouds",
-        "fashion__handheld__fluffy_clouds",
+        {
+          id: "fashion__dress__colorful_heart",
+          name: "Colorful Heart",
+          starRank: 4,
+          category: FashionCategory.dress,
+          tag1: Tag.street,
+          tag2: Tag.street_punk,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__shoes__glowing_shadow",
+          name: "Glowing Shadow",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.street,
+          tag2: Tag.street_punk,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            warm: StyleRank.b,
+            lively: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__hat__cotton_clouds",
+          name: "Cotton Clouds",
+          starRank: 4,
+          category: AccessoryCategory.hat,
+          tag1: Tag.street,
+          tag2: Tag.street_punk,
+          styleRanks: {
+            cool: StyleRank.s,
+            simple: StyleRank.a,
+            sexy: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__handheld__fluffy_clouds",
+          name: "Fluffy Clouds",
+          starRank: 4,
+          category: AccessoryCategory.handheld,
+          tag1: Tag.street,
+          tag2: Tag.street_punk,
+          styleRanks: {
+            cool: StyleRank.s,
+            simple: StyleRank.a,
+            sexy: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
       ],
     },
   },
@@ -4121,11 +6440,176 @@ const sets_2: Set[] = [
     mainStyle: Style.sexy,
     items: {
       create: [
-        "fashion__dress__freedom_oath",
-        "fashion__coat__bumpy_ride",
-        "fashion__socks__flowing_light",
-        "fashion__shoes__star_chart",
-        "fashion__earrings__gold_nighttalk",
+        {
+          id: "fashion__dress__freedom_oath",
+          name: "Freedom Oath",
+          starRank: 4,
+          category: FashionCategory.dress,
+          tag1: Tag.hot_girl,
+          tag2: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            simple: StyleRank.a,
+            cool: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__coat__bumpy_ride",
+          name: "Bumpy Ride",
+          starRank: 4,
+          category: FashionCategory.coat,
+          tag1: Tag.hot_girl,
+          tag2: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            gorgeous: StyleRank.b,
+            lively: StyleRank.b,
+            warm: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__flowing_light",
+          name: "Flowing Light",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.hot_girl,
+          tag2: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            simple: StyleRank.a,
+            cool: StyleRank.b,
+            elegant: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__star_chart",
+          name: "Star Chart",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.hot_girl,
+          tag2: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            gorgeous: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__earrings__gold_nighttalk",
+          name: "Gold Nighttalk",
+          starRank: 4,
+          category: AccessoryCategory.earrings,
+          tag1: Tag.hot_girl,
+          tag2: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            simple: StyleRank.a,
+            cool: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -4138,11 +6622,171 @@ const sets_2: Set[] = [
     mainStyle: Style.elegant,
     items: {
       create: [
-        "fashion__hairstyle__deep_attachment",
-        "fashion__dress__silent_midnight",
-        "fashion__socks__ode_to_autumn",
-        "fashion__shoes__blurred_night",
-        "fashion__handheld__twinking_stars",
+        {
+          id: "fashion__hairstyle__deep_attachment",
+          name: "Deep Attachment",
+          starRank: 4,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.formal,
+          styleRanks: {
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            cool: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__dress__silent_midnight",
+          name: "Silent Midnight",
+          starRank: 4,
+          category: FashionCategory.dress,
+          tag1: Tag.formal,
+          styleRanks: {
+            elegant: StyleRank.s,
+            cool: StyleRank.b,
+            simple: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__ode_to_autumn",
+          name: "Ode to Autumn",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.formal,
+          styleRanks: {
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            cool: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__blurred_night",
+          name: "Blurred Night",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.formal,
+          styleRanks: {
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            cool: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__handheld__twinking_stars",
+          name: "Twinking Stars",
+          starRank: 4,
+          category: AccessoryCategory.handheld,
+          tag1: Tag.formal,
+          styleRanks: {
+            elegant: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            cool: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -4155,11 +6799,172 @@ const sets_2: Set[] = [
     mainStyle: Style.cool,
     items: {
       create: [
-        "fashion__hairstyle__hearty_soda",
-        "fashion__top__frozen_coke",
-        "fashion__bottom__nulled_genes",
-        "fashion__shoes__mint_soda",
-        "fashion__handheld__absolute_zero",
+        {
+          id: "fashion__hairstyle__hearty_soda",
+          name: "Hearty Soda",
+          starRank: 4,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.sporty,
+          styleRanks: {
+            cool: StyleRank.s,
+            pure: StyleRank.a,
+            lively: StyleRank.b,
+            simple: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__top__frozen_coke",
+          name: "Frozen Coke",
+          starRank: 4,
+          category: FashionCategory.top,
+          tag1: Tag.sporty,
+          styleRanks: {
+            cool: StyleRank.s,
+            pure: StyleRank.a,
+            lively: StyleRank.b,
+            simple: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__bottom__nulled_genes",
+          name: "Nulled Genes",
+          starRank: 4,
+          category: FashionCategory.bottom,
+          tag1: Tag.sporty,
+          styleRanks: {
+            cool: StyleRank.s,
+            pure: StyleRank.a,
+            lively: StyleRank.b,
+            simple: StyleRank.b,
+            warm: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__mint_soda",
+          name: "Mint Soda",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.sporty,
+          styleRanks: {
+            cool: StyleRank.s,
+            pure: StyleRank.a,
+            lively: StyleRank.b,
+            simple: StyleRank.b,
+            warm: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__handheld__absolute_zero",
+          name: "Absolute Zero",
+          starRank: 4,
+          category: AccessoryCategory.handheld,
+          tag1: Tag.sporty,
+          tag2: Tag.street_punk,
+          styleRanks: {
+            cool: StyleRank.s,
+            pure: StyleRank.a,
+            lively: StyleRank.b,
+            simple: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -4172,11 +6977,86 @@ const sets_2: Set[] = [
     mainStyle: Style.sexy,
     items: {
       create: [
-        "fashion__top__private_love",
-        "fashion__bottom__dancing_reverie",
-        "fashion__shoes__graceful_dancing",
-        "fashion__necklace__glittering_feelings",
-        "fashion__handheld__shining_moment",
+        {
+          id: "fashion__top__private_love",
+          name: "Private Love",
+          starRank: 4,
+          category: FashionCategory.top,
+          tag1: Tag.girl_group,
+          tag2: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            lively: StyleRank.a,
+            gorgeous: StyleRank.b,
+            cool: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.giftExhibition }],
+        },
+        {
+          id: "fashion__bottom__dancing_reverie",
+          name: "Dancing Reverie",
+          starRank: 4,
+          category: FashionCategory.bottom,
+          tag1: Tag.girl_group,
+          tag2: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            lively: StyleRank.a,
+            gorgeous: StyleRank.b,
+            cool: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.giftExhibition }],
+        },
+        {
+          id: "fashion__shoes__graceful_dancing",
+          name: "Graceful Dancing",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.girl_group,
+          tag2: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            lively: StyleRank.a,
+            gorgeous: StyleRank.b,
+            cool: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.giftExhibition }],
+        },
+        {
+          id: "fashion__necklace__glittering_feelings",
+          name: "Glittering Feelings",
+          starRank: 4,
+          category: AccessoryCategory.necklace,
+          tag1: Tag.girl_group,
+          tag2: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            lively: StyleRank.a,
+            gorgeous: StyleRank.b,
+            cool: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.giftExhibition }],
+        },
+        {
+          id: "fashion__handheld__shining_moment",
+          name: "Shining Moment",
+          starRank: 4,
+          category: AccessoryCategory.handheld,
+          tag1: Tag.girl_group,
+          tag2: Tag.street,
+          styleRanks: {
+            sexy: StyleRank.s,
+            lively: StyleRank.a,
+            gorgeous: StyleRank.b,
+            cool: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.giftExhibition }],
+        },
       ],
     },
   },
@@ -4189,11 +7069,171 @@ const sets_2: Set[] = [
     mainStyle: Style.sexy,
     items: {
       create: [
-        "fashion__hairstyle__play_and_sing",
-        "fashion__dress__maple_and_dew",
-        "fashion__shoes__flower_dance",
-        "fashion__earrings__evening_song",
-        "fashion__wrist__jade_mist",
+        {
+          id: "fashion__hairstyle__play_and_sing",
+          name: "Play and Sing",
+          starRank: 4,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.traditional,
+          styleRanks: {
+            sexy: StyleRank.s,
+            simple: StyleRank.a,
+            elegant: StyleRank.b,
+            sweet: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__dress__maple_and_dew",
+          name: "Maple and Dew",
+          starRank: 4,
+          category: FashionCategory.dress,
+          tag1: Tag.traditional,
+          styleRanks: {
+            sexy: StyleRank.s,
+            elegant: StyleRank.a,
+            simple: StyleRank.b,
+            sweet: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__flower_dance",
+          name: "Flower Dance",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.traditional,
+          styleRanks: {
+            sexy: StyleRank.s,
+            simple: StyleRank.a,
+            elegant: StyleRank.b,
+            sweet: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__earrings__evening_song",
+          name: "Evening Song",
+          starRank: 4,
+          category: AccessoryCategory.earrings,
+          tag1: Tag.traditional,
+          styleRanks: {
+            sexy: StyleRank.s,
+            simple: StyleRank.a,
+            elegant: StyleRank.b,
+            sweet: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__wrist__jade_mist",
+          name: "Jade Mist",
+          starRank: 4,
+          category: AccessoryCategory.wrist,
+          tag1: Tag.traditional,
+          styleRanks: {
+            sexy: StyleRank.s,
+            simple: StyleRank.a,
+            elegant: StyleRank.b,
+            sweet: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -4206,11 +7246,96 @@ const sets_2: Set[] = [
     mainStyle: Style.sexy,
     items: {
       create: [
-        "fashion__dress__radiant_declaration",
-        "fashion__shoes__dream_chaser",
-        "fashion__necklace__fashion_vanguard",
-        "fashion__gloves__fashion_belief",
-        "fashion__ring__ring_promise",
+        {
+          id: "fashion__dress__radiant_declaration",
+          name: "Radiant Declaration",
+          starRank: 4,
+          category: FashionCategory.dress,
+          tag1: Tag.girl_group,
+          tag2: Tag.hot_girl,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.b,
+            gorgeous: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            { obtainType: ObtainType.exchangeGuildShop, cost: 440 },
+          ],
+        },
+        {
+          id: "fashion__shoes__dream_chaser",
+          name: "Dream Chaser",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.girl_group,
+          tag2: Tag.hot_girl,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            gorgeous: StyleRank.b,
+            lively: StyleRank.b,
+            warm: StyleRank.c,
+          },
+          obtainMethods: [
+            { obtainType: ObtainType.exchangeGuildShop, cost: 110 },
+          ],
+        },
+        {
+          id: "fashion__necklace__fashion_vanguard",
+          name: "Fashion Vanguard",
+          starRank: 4,
+          category: AccessoryCategory.necklace,
+          tag1: Tag.girl_group,
+          tag2: Tag.hot_girl,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            gorgeous: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            { obtainType: ObtainType.exchangeGuildShop, cost: 60 },
+          ],
+        },
+        {
+          id: "fashion__gloves__fashion_belief",
+          name: "Fashion Belief",
+          starRank: 4,
+          category: AccessoryCategory.gloves,
+          tag1: Tag.girl_group,
+          tag2: Tag.hot_girl,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.b,
+            gorgeous: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            { obtainType: ObtainType.exchangeGuildShop, cost: 60 },
+          ],
+        },
+        {
+          id: "fashion__ring__ring_promise",
+          name: "Ring Promise",
+          starRank: 4,
+          category: AccessoryCategory.ring,
+          tag1: Tag.girl_group,
+          tag2: Tag.hot_girl,
+          styleRanks: {
+            sexy: StyleRank.s,
+            cool: StyleRank.a,
+            gorgeous: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            { obtainType: ObtainType.exchangeGuildShop, cost: 60 },
+          ],
+        },
       ],
     },
   },
@@ -4223,14 +7348,246 @@ const sets_2: Set[] = [
     mainStyle: Style.cool,
     items: {
       create: [
-        "fashion__hairstyle__cat_words",
-        "fashion__dress__good_morning",
-        "fashion__coat__fluffy_phantom",
-        "fashion__socks__phantom_night",
-        "fashion__shoes__tsundere_nightcat",
-        "fashion__earrings__cats_eye",
-        "fashion__necklace__black_cat_chain",
-        "fashion__anklet__catty_bandage",
+        {
+          id: "fashion__hairstyle__cat_words",
+          name: "Cat Words",
+          starRank: 4,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.street_punk,
+          tag2: Tag.girl_group,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            elegant: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__dress__good_morning",
+          name: "Good Morning",
+          starRank: 4,
+          category: FashionCategory.dress,
+          tag1: Tag.street_punk,
+          tag2: Tag.girl_group,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__coat__fluffy_phantom",
+          name: "Fluffy Phantom",
+          starRank: 4,
+          category: FashionCategory.coat,
+          tag1: Tag.street_punk,
+          tag2: Tag.girl_group,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            warm: StyleRank.b,
+            simple: StyleRank.b,
+            lively: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__socks__phantom_night",
+          name: "Phantom Night",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.street_punk,
+          tag2: Tag.girl_group,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__shoes__tsundere_nightcat",
+          name: "Tsundere Nightcat",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.street_punk,
+          tag2: Tag.girl_group,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__earrings__cats_eye",
+          name: "Cat's Eye",
+          starRank: 4,
+          category: AccessoryCategory.earrings,
+          tag1: Tag.street_punk,
+          tag2: Tag.girl_group,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__necklace__black_cat_chain",
+          name: "Black Cat Chain",
+          starRank: 4,
+          category: AccessoryCategory.necklace,
+          tag1: Tag.street_punk,
+          tag2: Tag.girl_group,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
+        {
+          id: "fashion__anklet__catty_bandage",
+          name: "Catty Bandage",
+          starRank: 4,
+          category: AccessoryCategory.anklet,
+          tag1: Tag.street_punk,
+          tag2: Tag.girl_group,
+          styleRanks: {
+            cool: StyleRank.s,
+            sexy: StyleRank.a,
+            simple: StyleRank.b,
+            lively: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [
+            {
+              obtainType: ObtainType.craftStoryQuest,
+              // materialCost: [
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              //     {
+              //     itemId: "fashion__",
+              //     quantity: ,
+              //     },
+              // ],
+            },
+          ],
+        },
       ],
     },
   },
@@ -4243,16 +7600,166 @@ const sets_2: Set[] = [
     mainStyle: Style.lively,
     items: {
       create: [
-        "fashion__hairstyle__cheerful_melody",
-        "fashion__coat__phantom_melody",
-        "fashion__top__future_scale",
-        "fashion__bottom__angel_notes",
-        "fashion__socks__discord_chapter",
-        "fashion__shoes__irregular_notes",
-        "fashion__earrings__moving_melody",
-        "fashion__necklace__wind_beat",
-        "fashion__gloves__love_rhythm",
-        "fashion__floating__wandering_signal",
+        {
+          id: "fashion__hairstyle__cheerful_melody",
+          name: "Cheerful Melody",
+          starRank: 4,
+          category: FashionCategory.hairstyle,
+          tag1: Tag.girl_group,
+          tag2: Tag.cyberpunk,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            simple: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__coat__phantom_melody",
+          name: "Phantom Melody",
+          starRank: 4,
+          category: FashionCategory.coat,
+          tag1: Tag.girl_group,
+          tag2: Tag.cyberpunk,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            simple: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__top__future_scale",
+          name: "Future Scale",
+          starRank: 4,
+          category: FashionCategory.top,
+          tag1: Tag.girl_group,
+          tag2: Tag.cyberpunk,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            simple: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__bottom__angel_notes",
+          name: "Angel Notes",
+          starRank: 4,
+          category: FashionCategory.bottom,
+          tag1: Tag.girl_group,
+          tag2: Tag.cyberpunk,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            simple: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__socks__discord_chapter",
+          name: "Discord Chapter",
+          starRank: 4,
+          category: FashionCategory.socks,
+          tag1: Tag.girl_group,
+          tag2: Tag.cyberpunk,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            simple: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__shoes__irregular_notes",
+          name: "Irregular Notes",
+          starRank: 4,
+          category: FashionCategory.shoes,
+          tag1: Tag.girl_group,
+          tag2: Tag.cyberpunk,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            simple: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__earrings__moving_melody",
+          name: "Moving Melody",
+          starRank: 4,
+          category: AccessoryCategory.earrings,
+          tag1: Tag.girl_group,
+          tag2: Tag.cyberpunk,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            simple: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__necklace__wind_beat",
+          name: "Wind Beat",
+          starRank: 4,
+          category: AccessoryCategory.necklace,
+          tag1: Tag.girl_group,
+          tag2: Tag.cyberpunk,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            simple: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__gloves__love_rhythm",
+          name: "Love Rhythm",
+          starRank: 4,
+          category: AccessoryCategory.gloves,
+          tag1: Tag.girl_group,
+          tag2: Tag.cyberpunk,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            simple: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
+        {
+          id: "fashion__floating__wandering_signal",
+          name: "Wandering Signal",
+          starRank: 4,
+          category: AccessoryCategory.floating,
+          tag1: Tag.girl_group,
+          tag2: Tag.cyberpunk,
+          styleRanks: {
+            lively: StyleRank.s,
+            cool: StyleRank.a,
+            simple: StyleRank.b,
+            sexy: StyleRank.b,
+            fresh: StyleRank.c,
+          },
+          obtainMethods: [{ obtainType: ObtainType.lightchaseNightOfVvanna }],
+        },
       ],
     },
   },

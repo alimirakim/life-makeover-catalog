@@ -22,24 +22,6 @@ export enum Shop {
 
 export type Invitation = "Gilded Invitation" | "Radiant Invitation" | "hmmm";
 
-export enum Material {
-  gold = "gold",
-  diamond = "diamond",
-  coupon = "coupon",
-  vvannaPt = "vvannaPt",
-  dye = "dye",
-  threadSpool = "threadSpool",
-  yearningWings = "yearningWings",
-  allyExpKeyI = "allyExpKeyI",
-  allyExpKeyII = "allyExpKeyII",
-  allyExpKeyIII = "allyExpKeyIII",
-  basicColorChart = "basicColorChart",
-  basicWindVane = "basicWindVane",
-  trendColorChart = "trendColorChart",
-  trendWindVane = "trendWindVane",
-  vitality = "vitality",
-}
-
 export enum ImageAngle {
   Front,
   ThreeQuarter,

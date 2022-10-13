@@ -141,3 +141,21 @@ export enum MakeupCategory {
 }
 
 export type ItemCategory = FashionCategory | AccessoryCategory | MakeupCategory;
+
+export enum Material {
+  gold = "gold",
+  diamond = "diamond",
+  coupon = "coupon",
+  vvannaPt = "vvannaPt",
+  dye = "dye",
+  threadSpool = "threadSpool",
+  yearningWings = "yearningWings",
+  allyExpKeyI = "allyExpKeyI",
+  allyExpKeyII = "allyExpKeyII",
+  allyExpKeyIII = "allyExpKeyIII",
+  basicColorChart = "basicColorChart",
+  basicWindVane = "basicWindVane",
+  trendColorChart = "trendColorChart",
+  trendWindVane = "trendWindVane",
+  vitality = "vitality",
+}
